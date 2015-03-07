@@ -1,7 +1,7 @@
 /* https://css-tricks.com/creating-a-3d-cube-image-gallery/ */
 // toggle the cube dimensions here.
-$cubeWidth: 300px;
-$cubeHeight: 300px;
+$cubeWidth: 400px;
+$cubeHeight: 400px;
 $cubeDepth: $cubeHeight;
 
 $background_front:blue;
@@ -62,73 +62,73 @@ $background_bottom:orange;
 }
 
 /* Axis rotate along with the cube. First rotate, then move in Z direction */
-._3dface--front {
-    @include transform( translate3d(0, 0, $cubeDepth / 2) );
-}
-  
-._3dface--top {
-    @include transform( rotateX(90deg) translate3d(0, 0, $cubeHeight / 2) );
-}
+._3dface--front { @include transform( translate3d(0, 0, $cubeDepth / 2) ); }
+._3dface--top { @include transform( rotateX(90deg) translate3d(0, 0, $cubeHeight / 2) ); }
+._3dface--bottom { @include transform( rotateX(-90deg) translate3d(0, 0, $cubeHeight / 2) ); }
+._3dface--left { @include transform( rotateY(-90deg) translate3d(0, 0, $cubeWidth / 2) ); }
+._3dface--right { @include transform( rotateY(90deg) translate3d(0, 0, $cubeWidth / 2) ); }
+._3dface--back { @include transform( rotateY(180deg) translate3d(0, 0, $cubeDepth / 2) ); }
 
-._3dface--bottom {
-    @include transform( rotateX(-90deg) translate3d(0, 0, $cubeHeight / 2) );
-}
-
-._3dface--left {
-    @include transform( rotateY(-90deg) translate3d(0, 0, $cubeWidth / 2) );
-}
-
-
-._3dface--right {
-    @include transform( rotateY(90deg) translate3d(0, 0, $cubeWidth / 2) );
-}
-
-
-._3dface--back {
-    @include transform( rotateY(180deg) translate3d(0, 0, $cubeDepth / 2) );
-}
-/*
-#radio-left:checked ~ .space3d ._3dbox {
-    @include transform( rotateY(90deg) ); 
-}
-  
-#radio-right:checked ~ .space3d ._3dbox {
-    @include transform( rotateY(-90deg) ); 
-}
-  
-#radio-bottom:checked ~ .space3d ._3dbox {
-    @include transform( rotateX(90deg) ); 
-}
-
-#radio-top:checked ~ .space3d ._3dbox {
-    @include transform( rotateX(-90deg) );
-}
-
-#radio-back:checked ~ .space3d ._3dbox {
-    @include transform( rotateY(180deg) ); 
-}
-*/
   // Apply backgrounds
-._3dface--front {
-  background: $background_front;
+._3dface--front {  background: $background_front; }
+._3dface--left {  background: $background_left; }
+._3dface--right {  background: $background_right; }
+._3dface--top {  background: $background_top; }
+._3dface--bottom {  background: $background_bottom; }
+._3dface--back {  background: $background_back; }
+
+$transition_color : #eee;
+.button--front {  
+    background-size: 100% 200%;
+    background-image: linear-gradient(to bottom, $background_front 50%, $transition_color 50%); 
 }
-  
-._3dface--left {
-  background: $background_left;
+.button--left {  
+    background-size: 100% 200%;
+    background-image: linear-gradient(to bottom, $background_left 50%, $transition_color 50%); 
 }
-  
-._3dface--right {
-  background: $background_right;
+.button--right {  
+    background-size: 100% 200%;
+    background-image: linear-gradient(to bottom, $background_right 50%, $transition_color 50%); 
 }
-  
-._3dface--top {
-  background: $background_top;
+.button--top {  
+    background-size: 100% 200%;
+    background-image: linear-gradient(to bottom, $background_top 50%, $transition_color 50%); 
 }
-  
-._3dface--bottom {
-  background: $background_bottom;
+.button--bottom {  
+    background-size: 100% 200%;
+    background-image: linear-gradient(to bottom, $background_bottom 50%, $transition_color 50%); 
 }
-  
-._3dface--back {
-  background: $background_back;
+.button--back {  
+    background-size: 100% 200%;
+    background-image: linear-gradient(to bottom, $background_back 50%, $transition_color 50%); 
+}
+
+.cube_buttons{
+    $height:20px;
+    $width:80%;
+    width:$width;
+    height:$height;
+    position: absolute;
+    left:0;
+    right:0;
+    margin:0 auto;
+    bottom:30px;
+    
+    button{
+        border:0px;
+        @include transition(  background-position 0.4s );
+        width:16.666666666%;/* 6 sides to a cube, each button takes up 1/6 of div width */
+        height:100%;
+        font-size:$height * .8;
+        color:black;
+
+        /* Hide the text. */
+        text-indent: 500%;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    button:hover{
+        text-indent: 0%;/* show the text */
+        background-position: 0 -100%;
+    }
 }

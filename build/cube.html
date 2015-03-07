@@ -17,54 +17,37 @@
   <body class="cube">
     <link href="stylesheets/cube.css" rel="stylesheet" type="text/css" />
         
-<div id="wrap">
-
-<!-- CONTROLS - Checkbox Hack -->
-    <!--
-<input type="radio" checked id="radio-front" name="select-face"/>    
-<input type="radio" id="radio-left" name="select-face"/>
-<input type="radio" id="radio-right" name="select-face"/>
-<input type="radio" id="radio-top" name="select-face"/>
-<input type="radio" id="radio-bottom" name="select-face"/>
-<input type="radio" id="radio-back" name="select-face"/>
--->
-
     <div class="space3d">
         <div class="_3dbox">
           <div class="_3dface _3dface--front">
               <p>asdasdasdadsasd</p>
-
           </div>
           <div class="_3dface _3dface--top">
               <p>asdasdasdadsasd</p>
-
           </div>
           <div class="_3dface _3dface--bottom">
               <p>asdasdasdadsasd</p>
-
           </div>
           <div class="_3dface _3dface--left">
               <p>asdasdasdadsasd</p>
-
           </div>
           <div class="_3dface _3dface--right">
               <p>asdasdasdadsasd</p>
-
           </div>
           <div class="_3dface _3dface--back">
               <p>asdasdasdadsasd</p>
           </div>
         </div>
     </div>
-    
-    <div>
-     <button onclick="rotateFront()">Click me</button> 
-     <button onclick="rotateLeft()">Click me</button> 
-     <button onclick="rotateRight()">Click me</button> 
-     <button onclick="rotateBack()">Click me</button> 
-     <button onclick="rotateTop()">Click me</button> 
-     <button onclick="rotateBottom()">Click me</button> 
-    </div>
+
+<div class="cube_buttons">
+    <!-- Buttons have space inbetween them due to newline and tab between them. Fix this by commenting out the buggy whitespace-->
+    <button class="button--front" onclick="rotateFront()">aa</dbuttoniv><!--
+    --><button class="button--left" onclick="rotateLeft()">aa</button><!--
+    --><button class="button--right" onclick="rotateRight()">aa</button><!--
+    --><button class="button--back" onclick="rotateBack()">aa</button><!--
+    --><button class="button--top" onclick="rotateTop()">aa</button><!--
+    --><button class="button--bottom"  onclick="rotateBottom()">aa</button>
 </div>
   </body>
 </html>
