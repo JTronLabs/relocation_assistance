@@ -1,4 +1,4 @@
-/* https://css-tricks.com/creating-a-3d-cube-image-gallery/ */
+/* CUBE :: https://css-tricks.com/creating-a-3d-cube-image-gallery/ */
 // toggle the cube dimensions here.
 $cubeWidth: 400px;
 $cubeHeight: 400px;
@@ -26,31 +26,35 @@ $background_bottom:orange;
     transition: $rules;
 }
 
-
 /* Keep the vanishing point of the perspective constant by wrapping the cube with a div that has perspective. This ensures the perspective does not rotate with the cube */
 .space3d {
-    margin:100px auto;
     perspective: 1000px;
     width: $cubeWidth;
     height: $cubeHeight;
-    display: block;
+    
+    position:absolute;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    margin:auto;
 }
 
 /* 3D Cube */
 ._3dbox {
-    display: block;
     @include transition( all 0.85s cubic-bezier(0.175,0.885,0.320,1.275) );
 
-    position: relative;
-    width: 100%;
-    height: 100%;
+    width: $cubeWidth;
+    height: $cubeHeight;
     transform-style: preserve-3d;
     @include transform( rotateX(-15deg) rotateY(15deg));
 }
 
 ._3dface {
-    width: $cubeWidth;
-    height: $cubeHeight;
+    $pad:20px;
+    width: $cubeWidth - 2 * $pad;
+    height: $cubeHeight - 2 * $pad;
+    padding:$pad;
     overflow: hidden;
     position: absolute;
   
@@ -104,7 +108,7 @@ $transition_color : #eee;
 }
 
 .cube_buttons{
-    $height:20px;
+    $height:1.25em;
     $width:80%;
     width:$width;
     height:$height;
@@ -112,7 +116,7 @@ $transition_color : #eee;
     left:0;
     right:0;
     margin:0 auto;
-    bottom:30px;
+    bottom:50px;
     
     button{
         border:0px;
@@ -121,6 +125,7 @@ $transition_color : #eee;
         height:100%;
         font-size:$height * .8;
         color:black;
+        cursor:pointer;
 
         /* Hide the text. */
         text-indent: 500%;
