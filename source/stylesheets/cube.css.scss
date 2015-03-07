@@ -1,0 +1,134 @@
+/* https://css-tricks.com/creating-a-3d-cube-image-gallery/ */
+// toggle the cube dimensions here.
+$cubeWidth: 300px;
+$cubeHeight: 300px;
+$cubeDepth: $cubeHeight;
+
+$background_front:blue;
+$background_left:red;
+$background_right:black;
+$background_back:white;
+$background_top:yellow;
+$background_bottom:orange;
+
+@mixin transform($rules){
+    -o-transform:$rules;
+    -moz-transform:$rules;
+    -ms-transform: $rules; 
+    -webkit-transform:$rules; 
+    transform: $rules;
+}
+@mixin transition($rules){
+    -o-transition:$rules;
+    -moz-transition:$rules;
+    -ms-transition: $rules; 
+    -webkit-transition:$rules; 
+    transition: $rules;
+}
+
+
+/* Keep the vanishing point of the perspective constant by wrapping the cube with a div that has perspective. This ensures the perspective does not rotate with the cube */
+.space3d {
+    margin:100px auto;
+    perspective: 1000px;
+    width: $cubeWidth;
+    height: $cubeHeight;
+    display: block;
+}
+
+/* 3D Cube */
+._3dbox {
+    display: block;
+    @include transition( all 0.85s cubic-bezier(0.175,0.885,0.320,1.275) );
+
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    @include transform( rotateX(-15deg) rotateY(15deg));
+}
+
+._3dface {
+    width: $cubeWidth;
+    height: $cubeHeight;
+    overflow: hidden;
+    position: absolute;
+  
+    border: 2px solid #888;
+    opacity: 0.8;
+    
+    box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.1),
+ 0 0 50px rgba(0, 0, 0, 0.3);
+}
+
+/* Axis rotate along with the cube. First rotate, then move in Z direction */
+._3dface--front {
+    @include transform( translate3d(0, 0, $cubeDepth / 2) );
+}
+  
+._3dface--top {
+    @include transform( rotateX(90deg) translate3d(0, 0, $cubeHeight / 2) );
+}
+
+._3dface--bottom {
+    @include transform( rotateX(-90deg) translate3d(0, 0, $cubeHeight / 2) );
+}
+
+._3dface--left {
+    @include transform( rotateY(-90deg) translate3d(0, 0, $cubeWidth / 2) );
+}
+
+
+._3dface--right {
+    @include transform( rotateY(90deg) translate3d(0, 0, $cubeWidth / 2) );
+}
+
+
+._3dface--back {
+    @include transform( rotateY(180deg) translate3d(0, 0, $cubeDepth / 2) );
+}
+/*
+#radio-left:checked ~ .space3d ._3dbox {
+    @include transform( rotateY(90deg) ); 
+}
+  
+#radio-right:checked ~ .space3d ._3dbox {
+    @include transform( rotateY(-90deg) ); 
+}
+  
+#radio-bottom:checked ~ .space3d ._3dbox {
+    @include transform( rotateX(90deg) ); 
+}
+
+#radio-top:checked ~ .space3d ._3dbox {
+    @include transform( rotateX(-90deg) );
+}
+
+#radio-back:checked ~ .space3d ._3dbox {
+    @include transform( rotateY(180deg) ); 
+}
+*/
+  // Apply backgrounds
+._3dface--front {
+  background: $background_front;
+}
+  
+._3dface--left {
+  background: $background_left;
+}
+  
+._3dface--right {
+  background: $background_right;
+}
+  
+._3dface--top {
+  background: $background_top;
+}
+  
+._3dface--bottom {
+  background: $background_bottom;
+}
+  
+._3dface--back {
+  background: $background_back;
+}

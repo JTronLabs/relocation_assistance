@@ -1,0 +1,132 @@
+/* https://css-tricks.com/creating-a-3d-cube-image-gallery/ */
+/* Keep the vanishing point of the perspective constant by wrapping the cube with a div that has perspective. This ensures the perspective does not rotate with the cube */
+/* line 31, /home/james/Desktop/cube/source/stylesheets/cube.css.scss */
+.space3d {
+  margin: 100px auto;
+  perspective: 1000px;
+  width: 300px;
+  height: 300px;
+  display: block; }
+
+/* 3D Cube */
+/* line 40, /home/james/Desktop/cube/source/stylesheets/cube.css.scss */
+._3dbox {
+  display: block;
+  -o-transition: all 0.85s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -moz-transition: all 0.85s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -ms-transition: all 0.85s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -webkit-transition: all 0.85s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.85s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  -o-transform: rotateX(-15deg) rotateY(15deg);
+  -moz-transform: rotateX(-15deg) rotateY(15deg);
+  -ms-transform: rotateX(-15deg) rotateY(15deg);
+  -webkit-transform: rotateX(-15deg) rotateY(15deg);
+  transform: rotateX(-15deg) rotateY(15deg); }
+
+/* line 51, /home/james/Desktop/cube/source/stylesheets/cube.css.scss */
+._3dface {
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  position: absolute;
+  border: 2px solid #888;
+  opacity: 0.8;
+  box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.1), 0 0 50px rgba(0, 0, 0, 0.3); }
+
+/* Axis rotate along with the cube. First rotate, then move in Z direction */
+/* line 65, /home/james/Desktop/cube/source/stylesheets/cube.css.scss */
+._3dface--front {
+  -o-transform: translate3d(0, 0, 150px);
+  -moz-transform: translate3d(0, 0, 150px);
+  -ms-transform: translate3d(0, 0, 150px);
+  -webkit-transform: translate3d(0, 0, 150px);
+  transform: translate3d(0, 0, 150px); }
+
+/* line 69, /home/james/Desktop/cube/source/stylesheets/cube.css.scss */
+._3dface--top {
+  -o-transform: rotateX(90deg) translate3d(0, 0, 150px);
+  -moz-transform: rotateX(90deg) translate3d(0, 0, 150px);
+  -ms-transform: rotateX(90deg) translate3d(0, 0, 150px);
+  -webkit-transform: rotateX(90deg) translate3d(0, 0, 150px);
+  transform: rotateX(90deg) translate3d(0, 0, 150px); }
+
+/* line 73, /home/james/Desktop/cube/source/stylesheets/cube.css.scss */
+._3dface--bottom {
+  -o-transform: rotateX(-90deg) translate3d(0, 0, 150px);
+  -moz-transform: rotateX(-90deg) translate3d(0, 0, 150px);
+  -ms-transform: rotateX(-90deg) translate3d(0, 0, 150px);
+  -webkit-transform: rotateX(-90deg) translate3d(0, 0, 150px);
+  transform: rotateX(-90deg) translate3d(0, 0, 150px); }
+
+/* line 77, /home/james/Desktop/cube/source/stylesheets/cube.css.scss */
+._3dface--left {
+  -o-transform: rotateY(-90deg) translate3d(0, 0, 150px);
+  -moz-transform: rotateY(-90deg) translate3d(0, 0, 150px);
+  -ms-transform: rotateY(-90deg) translate3d(0, 0, 150px);
+  -webkit-transform: rotateY(-90deg) translate3d(0, 0, 150px);
+  transform: rotateY(-90deg) translate3d(0, 0, 150px); }
+
+/* line 82, /home/james/Desktop/cube/source/stylesheets/cube.css.scss */
+._3dface--right {
+  -o-transform: rotateY(90deg) translate3d(0, 0, 150px);
+  -moz-transform: rotateY(90deg) translate3d(0, 0, 150px);
+  -ms-transform: rotateY(90deg) translate3d(0, 0, 150px);
+  -webkit-transform: rotateY(90deg) translate3d(0, 0, 150px);
+  transform: rotateY(90deg) translate3d(0, 0, 150px); }
+
+/* line 87, /home/james/Desktop/cube/source/stylesheets/cube.css.scss */
+._3dface--back {
+  -o-transform: rotateY(180deg) translate3d(0, 0, 150px);
+  -moz-transform: rotateY(180deg) translate3d(0, 0, 150px);
+  -ms-transform: rotateY(180deg) translate3d(0, 0, 150px);
+  -webkit-transform: rotateY(180deg) translate3d(0, 0, 150px);
+  transform: rotateY(180deg) translate3d(0, 0, 150px); }
+
+/*
+#radio-left:checked ~ .space3d ._3dbox {
+    @include transform( rotateY(90deg) ); 
+}
+  
+#radio-right:checked ~ .space3d ._3dbox {
+    @include transform( rotateY(-90deg) ); 
+}
+  
+#radio-bottom:checked ~ .space3d ._3dbox {
+    @include transform( rotateX(90deg) ); 
+}
+
+#radio-top:checked ~ .space3d ._3dbox {
+    @include transform( rotateX(-90deg) );
+}
+
+#radio-back:checked ~ .space3d ._3dbox {
+    @include transform( rotateY(180deg) ); 
+}
+*/
+/* line 112, /home/james/Desktop/cube/source/stylesheets/cube.css.scss */
+._3dface--front {
+  background: blue; }
+
+/* line 116, /home/james/Desktop/cube/source/stylesheets/cube.css.scss */
+._3dface--left {
+  background: red; }
+
+/* line 120, /home/james/Desktop/cube/source/stylesheets/cube.css.scss */
+._3dface--right {
+  background: black; }
+
+/* line 124, /home/james/Desktop/cube/source/stylesheets/cube.css.scss */
+._3dface--top {
+  background: yellow; }
+
+/* line 128, /home/james/Desktop/cube/source/stylesheets/cube.css.scss */
+._3dface--bottom {
+  background: orange; }
+
+/* line 132, /home/james/Desktop/cube/source/stylesheets/cube.css.scss */
+._3dface--back {
+  background: white; }
