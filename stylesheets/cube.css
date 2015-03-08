@@ -137,57 +137,58 @@ header {
 
 /* line 120, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
 ._3dface--right {
-  background: black; }
+  background: black;
+  color: white; }
 
-/* line 121, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
+/* line 124, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
 ._3dface--top {
   background: yellow; }
 
-/* line 122, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
+/* line 125, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
 ._3dface--bottom {
   background: orange; }
 
-/* line 123, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
+/* line 126, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
 ._3dface--back {
   background: white; }
 
-/* line 126, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
+/* line 129, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
 .button--front {
   background-size: 100% 200%;
   background-image: linear-gradient(to bottom, blue 50%, #eee 50%); }
 
-/* line 130, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
+/* line 133, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
 .button--left {
   background-size: 100% 200%;
   background-image: linear-gradient(to bottom, red 50%, #eee 50%); }
 
-/* line 134, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
+/* line 137, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
 .button--right {
   background-size: 100% 200%;
   background-image: linear-gradient(to bottom, black 50%, #eee 50%); }
 
-/* line 138, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
+/* line 141, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
 .button--top {
   background-size: 100% 200%;
   background-image: linear-gradient(to bottom, yellow 50%, #eee 50%); }
 
-/* line 142, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
+/* line 145, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
 .button--bottom {
   background-size: 100% 200%;
   background-image: linear-gradient(to bottom, orange 50%, #eee 50%); }
 
-/* line 146, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
+/* line 149, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
 .button--back {
   background-size: 100% 200%;
   background-image: linear-gradient(to bottom, white 50%, #eee 50%); }
 
-/* line 151, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
+/* line 154, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
 .cube_buttons {
   width: 80%;
   height: 1.25em;
   display: block;
   margin: 200px auto 10px; }
-  /* line 159, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
+  /* line 162, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
   .cube_buttons button {
     border: 0px;
     -o-transition: background-position 0.4s;
@@ -205,7 +206,7 @@ header {
     text-indent: 500%;
     white-space: nowrap;
     overflow: hidden; }
-  /* line 173, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
+  /* line 176, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
   .cube_buttons button:hover {
     text-indent: 0%;
     /* show the text */

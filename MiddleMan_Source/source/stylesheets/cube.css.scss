@@ -117,7 +117,10 @@ header{
     color:black;
 }
 ._3dface--left {  background: $background_left; }
-._3dface--right {  background: $background_right; }
+._3dface--right {  
+    background: $background_right;
+    color:white;
+}
 ._3dface--top {  background: $background_top; }
 ._3dface--bottom {  background: $background_bottom; }
 ._3dface--back {  background: $background_back; }
