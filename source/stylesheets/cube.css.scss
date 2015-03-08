@@ -68,16 +68,12 @@ header{
 }
 /* Keep the vanishing point of the perspective constant by wrapping the cube with a div that has perspective. This ensures the perspective does not rotate with the cube */
 .space3d {
+    display: block;
     perspective: 1000px;
     width: $cubeWidth;
     height: $cubeHeight;
+    margin:100px auto;
     
-    position:absolute;
-    top:0;
-    bottom:0;
-    right:0;
-    left:0;
-    margin:auto;
 }
 
 /* 3D Cube */
@@ -152,11 +148,8 @@ $transition_color : #eee;
     $width:80%;
     width:$width;
     height:$height;
-    position: absolute;
-    left:0;
-    right:0;
-    margin:0 auto;
-    bottom:50px;
+    display: block;
+    margin: 200px auto 10px;
     
     button{
         border:0px;
