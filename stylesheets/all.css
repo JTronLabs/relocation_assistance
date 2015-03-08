@@ -1,35 +1,35 @@
-/* line 1, /home/james/Desktop/website/source/stylesheets/all.css.scss */
+/* line 1, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/all.css.scss */
 html {
   background: #eee; }
 
-/* line 5, /home/james/Desktop/website/source/stylesheets/all.css.scss */
+/* line 5, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/all.css.scss */
 header {
   width: 50%;
   margin: 0 auto; }
-  /* line 8, /home/james/Desktop/website/source/stylesheets/all.css.scss */
+  /* line 8, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/all.css.scss */
   header #logo {
     display: inline-block;
     background: black;
     border-radius: 45%;
     width: 200px;
     height: auto; }
-  /* line 15, /home/james/Desktop/website/source/stylesheets/all.css.scss */
+  /* line 15, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/all.css.scss */
   header #header_info {
     margin-left: 10%;
     display: inline-block; }
-  /* line 20, /home/james/Desktop/website/source/stylesheets/all.css.scss */
+  /* line 20, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/all.css.scss */
   header #nav_div {
     height: 2em;
     width: 100%;
     background: green;
     border-radius: 10px; }
-    /* line 26, /home/james/Desktop/website/source/stylesheets/all.css.scss */
+    /* line 26, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/all.css.scss */
     header #nav_div nav {
       height: 100%;
       width: 80%;
       margin: 0 auto;
       background: pink; }
-      /* line 31, /home/james/Desktop/website/source/stylesheets/all.css.scss */
+      /* line 31, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/all.css.scss */
       header #nav_div nav a {
         text-align: center;
         text-decoration: none;

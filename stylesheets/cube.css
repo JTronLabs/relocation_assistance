@@ -1,32 +1,32 @@
 /* CUBE :: https://css-tricks.com/creating-a-3d-cube-image-gallery/ */
-/* line 29, /home/james/Desktop/website/source/stylesheets/cube.css.scss */
+/* line 29, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
 header {
   width: 50%;
   margin: 0 auto; }
-  /* line 32, /home/james/Desktop/website/source/stylesheets/cube.css.scss */
+  /* line 32, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
   header #logo {
     display: inline-block;
     background: black;
     border-radius: 45%;
     width: 200px;
     height: auto; }
-  /* line 39, /home/james/Desktop/website/source/stylesheets/cube.css.scss */
+  /* line 39, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
   header #header_info {
     margin-left: 10%;
     display: inline-block; }
-  /* line 44, /home/james/Desktop/website/source/stylesheets/cube.css.scss */
+  /* line 44, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
   header #nav_div {
     height: 2em;
     width: 100%;
     background: green;
     border-radius: 10px; }
-    /* line 50, /home/james/Desktop/website/source/stylesheets/cube.css.scss */
+    /* line 50, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
     header #nav_div nav {
       height: 100%;
       width: 80%;
       margin: 0 auto;
       background: pink; }
-      /* line 55, /home/james/Desktop/website/source/stylesheets/cube.css.scss */
+      /* line 55, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
       header #nav_div nav a {
         text-align: center;
         text-decoration: none;
@@ -39,7 +39,7 @@ header {
         width: 20%; }
 
 /* Keep the vanishing point of the perspective constant by wrapping the cube with a div that has perspective. This ensures the perspective does not rotate with the cube */
-/* line 70, /home/james/Desktop/website/source/stylesheets/cube.css.scss */
+/* line 70, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
 .space3d {
   display: block;
   perspective: 1000px;
@@ -48,7 +48,7 @@ header {
   margin: 100px auto; }
 
 /* 3D Cube */
-/* line 80, /home/james/Desktop/website/source/stylesheets/cube.css.scss */
+/* line 80, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
 ._3dbox {
   -o-transition: all 0.85s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   -moz-transition: all 0.85s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -64,7 +64,7 @@ header {
   -webkit-transform: rotateX(-15deg) rotateY(15deg);
   transform: rotateX(-15deg) rotateY(15deg); }
 
-/* line 89, /home/james/Desktop/website/source/stylesheets/cube.css.scss */
+/* line 89, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
 ._3dface {
   width: 360px;
   height: 360px;
@@ -72,11 +72,11 @@ header {
   overflow: hidden;
   position: absolute;
   border: 2px solid #888;
-  opacity: 0.8;
+  opacity: 0.9;
   box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.1), 0 0 50px rgba(0, 0, 0, 0.3); }
 
-/* Axis rotate along with the cube. First rotate, then move in Z direction */
-/* line 105, /home/james/Desktop/website/source/stylesheets/cube.css.scss */
+/* Orient the faces of the cube. Axis rotate along with the cube. First rotate, then move in Z direction */
+/* line 105, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
 ._3dface--front {
   -o-transform: translate3d(0, 0, 200px);
   -moz-transform: translate3d(0, 0, 200px);
@@ -84,7 +84,7 @@ header {
   -webkit-transform: translate3d(0, 0, 200px);
   transform: translate3d(0, 0, 200px); }
 
-/* line 106, /home/james/Desktop/website/source/stylesheets/cube.css.scss */
+/* line 106, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
 ._3dface--top {
   -o-transform: rotateX(90deg) translate3d(0, 0, 200px);
   -moz-transform: rotateX(90deg) translate3d(0, 0, 200px);
@@ -92,7 +92,7 @@ header {
   -webkit-transform: rotateX(90deg) translate3d(0, 0, 200px);
   transform: rotateX(90deg) translate3d(0, 0, 200px); }
 
-/* line 107, /home/james/Desktop/website/source/stylesheets/cube.css.scss */
+/* line 107, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
 ._3dface--bottom {
   -o-transform: rotateX(-90deg) translate3d(0, 0, 200px);
   -moz-transform: rotateX(-90deg) translate3d(0, 0, 200px);
@@ -100,7 +100,7 @@ header {
   -webkit-transform: rotateX(-90deg) translate3d(0, 0, 200px);
   transform: rotateX(-90deg) translate3d(0, 0, 200px); }
 
-/* line 108, /home/james/Desktop/website/source/stylesheets/cube.css.scss */
+/* line 108, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
 ._3dface--left {
   -o-transform: rotateY(-90deg) translate3d(0, 0, 200px);
   -moz-transform: rotateY(-90deg) translate3d(0, 0, 200px);
@@ -108,7 +108,7 @@ header {
   -webkit-transform: rotateY(-90deg) translate3d(0, 0, 200px);
   transform: rotateY(-90deg) translate3d(0, 0, 200px); }
 
-/* line 109, /home/james/Desktop/website/source/stylesheets/cube.css.scss */
+/* line 109, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
 ._3dface--right {
   -o-transform: rotateY(90deg) translate3d(0, 0, 200px);
   -moz-transform: rotateY(90deg) translate3d(0, 0, 200px);
@@ -116,7 +116,7 @@ header {
   -webkit-transform: rotateY(90deg) translate3d(0, 0, 200px);
   transform: rotateY(90deg) translate3d(0, 0, 200px); }
 
-/* line 110, /home/james/Desktop/website/source/stylesheets/cube.css.scss */
+/* line 110, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
 ._3dface--back {
   -o-transform: rotateY(180deg) translate3d(0, 0, 200px);
   -moz-transform: rotateY(180deg) translate3d(0, 0, 200px);
@@ -124,67 +124,70 @@ header {
   -webkit-transform: rotateY(180deg) translate3d(0, 0, 200px);
   transform: rotateY(180deg) translate3d(0, 0, 200px); }
 
-/* line 113, /home/james/Desktop/website/source/stylesheets/cube.css.scss */
+/* line 113, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
 ._3dface--front {
-  background: blue; }
+  background: blue;
+  text-align: center;
+  font-size: 2em;
+  color: black; }
 
-/* line 114, /home/james/Desktop/website/source/stylesheets/cube.css.scss */
+/* line 119, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
 ._3dface--left {
   background: red; }
 
-/* line 115, /home/james/Desktop/website/source/stylesheets/cube.css.scss */
+/* line 120, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
 ._3dface--right {
   background: black; }
 
-/* line 116, /home/james/Desktop/website/source/stylesheets/cube.css.scss */
+/* line 121, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
 ._3dface--top {
   background: yellow; }
 
-/* line 117, /home/james/Desktop/website/source/stylesheets/cube.css.scss */
+/* line 122, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
 ._3dface--bottom {
   background: orange; }
 
-/* line 118, /home/james/Desktop/website/source/stylesheets/cube.css.scss */
+/* line 123, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
 ._3dface--back {
   background: white; }
 
-/* line 121, /home/james/Desktop/website/source/stylesheets/cube.css.scss */
+/* line 126, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
 .button--front {
   background-size: 100% 200%;
   background-image: linear-gradient(to bottom, blue 50%, #eee 50%); }
 
-/* line 125, /home/james/Desktop/website/source/stylesheets/cube.css.scss */
+/* line 130, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
 .button--left {
   background-size: 100% 200%;
   background-image: linear-gradient(to bottom, red 50%, #eee 50%); }
 
-/* line 129, /home/james/Desktop/website/source/stylesheets/cube.css.scss */
+/* line 134, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
 .button--right {
   background-size: 100% 200%;
   background-image: linear-gradient(to bottom, black 50%, #eee 50%); }
 
-/* line 133, /home/james/Desktop/website/source/stylesheets/cube.css.scss */
+/* line 138, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
 .button--top {
   background-size: 100% 200%;
   background-image: linear-gradient(to bottom, yellow 50%, #eee 50%); }
 
-/* line 137, /home/james/Desktop/website/source/stylesheets/cube.css.scss */
+/* line 142, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
 .button--bottom {
   background-size: 100% 200%;
   background-image: linear-gradient(to bottom, orange 50%, #eee 50%); }
 
-/* line 141, /home/james/Desktop/website/source/stylesheets/cube.css.scss */
+/* line 146, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
 .button--back {
   background-size: 100% 200%;
   background-image: linear-gradient(to bottom, white 50%, #eee 50%); }
 
-/* line 146, /home/james/Desktop/website/source/stylesheets/cube.css.scss */
+/* line 151, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
 .cube_buttons {
   width: 80%;
   height: 1.25em;
   display: block;
   margin: 200px auto 10px; }
-  /* line 154, /home/james/Desktop/website/source/stylesheets/cube.css.scss */
+  /* line 159, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
   .cube_buttons button {
     border: 0px;
     -o-transition: background-position 0.4s;
@@ -202,7 +205,7 @@ header {
     text-indent: 500%;
     white-space: nowrap;
     overflow: hidden; }
-  /* line 168, /home/james/Desktop/website/source/stylesheets/cube.css.scss */
+  /* line 173, /home/james/Desktop/website/MiddleMan_Source/source/stylesheets/cube.css.scss */
   .cube_buttons button:hover {
     text-indent: 0%;
     /* show the text */
