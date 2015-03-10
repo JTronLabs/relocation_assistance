@@ -121,7 +121,12 @@ header{
     background: $background_right;
     color:white;
 }
-._3dface--top {  background: $background_top; }
+._3dface--top {  
+    background: $background_top;
+    a{
+        display: block;
+    }
+}
 ._3dface--bottom {  background: $background_bottom; }
 ._3dface--back {  background: $background_back; }
 
@@ -152,7 +157,7 @@ $transition_color : #eee;
 }
 
 .cube_buttons{
-    $height:1.25em;
+    $height:2em;
     $width:80%;
     width:$width;
     height:$height;
