@@ -5,6 +5,8 @@
 
 $footer_img_len:60px;
 $small_margin: 10px;
+$navbar_height: 50px;
+$row_item_padding: 75px;
 
 
 body {
@@ -16,13 +18,21 @@ html{
     font-size: 30px;
 }
 
-.navbar-icon{
-    width:20px;
-    height:auto;
-}
-
-.navbar-nav{
-    text-align: center;
+.navbar{
+    font-size: 1rem;
+    
+    li{
+        a{
+            line-height:$navbar_height;
+        }
+    }
+    .navbar-icon{
+        width:auto;
+        height:$navbar_height;
+    }
+    .navbar-nav{
+        text-align: center;
+    }
 }
 
 
@@ -32,7 +42,7 @@ footer{
     background:rgb(51,51,51);
     text-align: center;
     margin:0px;
-    padding:5px 0px;
+    padding:$row_item_padding 0px;
     
     img{
         margin:$small_margin;

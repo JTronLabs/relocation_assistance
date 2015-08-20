@@ -3,7 +3,8 @@ $row_height: 75%;
 $image_size: 250px;
 $link_img_len: 40px;
 $company_info_len: 300px;
-$small_margin: 10px;
+$row_item_padding: 75px;
+$small_margin:10px;
 $color: rgb(181,153,92);
 
 
@@ -34,7 +35,7 @@ $color: rgb(181,153,92);
     background:$color;
     text-align: center;
     margin:0;
-    padding:0;
+    padding:$row_item_padding 0px;
     
     .container{
         margin: 10px auto;
@@ -49,6 +50,7 @@ $color: rgb(181,153,92);
     text-align: center;
     margin:0;
     padding:0;
+    padding:$row_item_padding 0px;
 
     .project{
         vertical-align: top;
@@ -68,7 +70,7 @@ $color: rgb(181,153,92);
 
 #companies{
     background:white;
-    padding:$small_margin;
+    padding:$row_item_padding 0px;
     margin:0;
     text-align: center;
     
