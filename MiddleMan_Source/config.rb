@@ -28,8 +28,6 @@
 # proxy "/this-page-has-no-template.html", "/template-file.html", :locals => {
 #  :which_fake_page => "Rendering a fake page with a local variable" }
 
-page "index.html", :layout => :index_layout
-
 ###
 # Helpers
 ###
@@ -48,6 +46,9 @@ page "index.html", :layout => :index_layout
 #     "Helping"
 #   end
 # end
+
+# Asset pipeline
+activate :sprockets
 
 set :css_dir, 'stylesheets'
 

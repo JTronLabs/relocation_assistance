@@ -1,36 +1,62 @@
-<div class="space3d">
-    <div class="_3dbox">
-      <div class="_3dface _3dface--front">
-          <h1>Hello World!</h1>
-      </div>
-      <div class="_3dface _3dface--top">
-        <h1>Android</h1>
-        <a href="https://play.google.com/store/apps/developer?id=JTronLabs">Google Play Store</a>
-        <h4>Projects On Github</h4>
-        <a href="https://github.com/JTronLabs/CrashBoomBop">Crash Boom Bop</a>
-        <a href="https://github.com/JTronLabs/FunGroups">Fun Groups!</a>
-      </div>
-      <div class="_3dface _3dface--bottom">
-          <p>asdasdasdadsasd</p>
-      </div>
-      <div class="_3dface _3dface--left">
-          <p>asdasdasdadsasd</p>
-      </div>
-      <div class="_3dface _3dface--right">
-          <p>asdasdasdadsasd</p>
-      </div>
-      <div class="_3dface _3dface--back">
-          <p>asdasdasdadsasd</p>
-      </div>
+---
+css_page: index
+---
+
+<div id="james">
+    
+    <%= partial "layouts/nav_bar" %>
+    
+    <div id="index_top">
+        <h1>James Lowrey</h1>
+        <h5>Developer</h5>
     </div>
 </div>
 
-<div class="cube_buttons">
-    <!-- Buttons & other tags have space inbetween them (in the browser) due to newline and tab between them. Fix this by commenting out the buggy whitespace-->
-    <button class="button--front" onclick="rotateFront()">Hello World!</button><!--
-    --><button class="button--left" onclick="rotateLeft()">aa</button><!--
-    --><button class="button--right" onclick="rotateRight()">aa</button><!--
-    --><button class="button--back" onclick="rotateBack()">aa</button><!--
-    --><button class="button--top" onclick="rotateTop()">Android</button><!--
-    --><button class="button--bottom"  onclick="rotateBottom()">aa</button>
+<div class="row" id="about_me">
+    <div class="container">
+        <h1>About Me</h1>
+        <p>Striving to do three things</p>
+        <%= partial 'layouts/about_me', locals:{
+            about_me_image_location: "code.png",
+            title: "Code"} %>
+        <%= partial 'layouts/about_me', locals:{
+            about_me_image_location: "learn-icon.png",
+            title: "Learn"} %>
+        <%= partial 'layouts/about_me', locals:{
+            about_me_image_location: "grow.png",
+            title: "Grow"} %>
+    </div>
+</div>
+
+<div class="row" id="individual_project">
+    <h1>Individual Projects</h1>
+    
+    <%= partial 'layouts/project', locals:{
+        project_image_location: "JASIG.png",
+        title: "JASIG",
+        github_link:"https://github.com/JTronLabs/Space-Shooter-Android",
+        android_link:"https://play.google.com/store/apps/details?id=com.jtronlabs.space_shooter"} %>
+    
+    <%= partial 'layouts/project', locals:{
+        project_image_location: "crash_boom_bop.png",
+        title: "Crash Boom Bop",
+        github_link: "https://github.com/JTronLabs/CrashBoomBop",
+        android_link:"https://play.google.com/store/apps/details?id=com.jtronlabs.crash_boom_bop_free"} %>
+    
+    <%= partial 'layouts/project', locals:{
+        project_image_location: "fun_groups.png",
+        title: "Fun Groups!",
+        github_link: "https://github.com/JTronLabs/FunGroups",
+        android_link:"https://play.google.com/store/apps/details?id=com.jtronlabs.fun_groups"} %>
+    
+    <%= partial 'layouts/project', locals:{
+        project_image_location: "uact.png",
+        title: "UACT",
+        github_link: "https://github.com/JTronLabs/UACT",} %>
+    
+    <%= partial 'layouts/project', locals:{
+        project_image_location: "buddy.jpg",
+        title: "This Website",
+        github_link:"https://github.com/JTronLabs/JTronLabs.github.io",
+        website_link:"http://jtronlabs.github.io/"} %>
 </div>
