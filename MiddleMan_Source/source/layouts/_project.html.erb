@@ -7,9 +7,10 @@ description = "" unless defined? description
 
     <%= image_tag(project_image_location, class:"project_image") %>
     <div class="project_info">
-        <h3><%= title %></h3>
+        <h5><%= title %></h5>
         <p><%= description %></p>
     </div>
+    
     <%= if defined? github_link
         link_to image_tag("github_icon.png", class:"link_image"),github_link
     end %>
@@ -19,4 +20,5 @@ description = "" unless defined? description
     <%= if defined? website_link
 link_to image_tag("website-icon.png", class:"link_image"),website_link
     end %>
+    
 </div>

@@ -4,6 +4,7 @@
 @import "bootstrap";
 
 $footer_img_len:60px;
+$small_margin: 10px;
 
 
 body {
@@ -12,7 +13,7 @@ body {
 
 html{
     height: 100%;
-    font-size: 20px;;
+    font-size: 30px;
 }
 
 .navbar-icon{
@@ -27,15 +28,37 @@ html{
 
 
 footer{
-    background:#ccc;
+    color:white;
+    background:rgb(51,51,51);
     text-align: center;
     margin:0px;
-    padding:0px;
-    font-size: .7rem;
+    padding:5px 0px;
     
     img{
-        margin:5px;
+        margin:$small_margin;
         width: $footer_img_len;
         height:$footer_img_len;
     }
+}
+
+h1{
+    font-size: 6rem;    
+}
+h2{
+    font-size: 3.5rem;    
+}
+h3{
+    font-size: 2.5rem;    
+}
+h4{
+    font-size: 1.8rem;    
+}
+h5{
+    font-size: 1.6rem;    
+}
+h6{
+    font-size: 1.1rem;
+}
+p{
+    font-size: 1rem;    
 }

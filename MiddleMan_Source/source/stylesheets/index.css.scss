@@ -1,6 +1,11 @@
 $title_height: 100%;
 $row_height: 75%;
-$image_size: 150px;
+$image_size: 250px;
+$link_img_len: 40px;
+$company_info_len: 300px;
+$small_margin: 10px;
+$color: rgb(181,153,92);
+
 
 #james{
     height:$title_height;
@@ -22,23 +27,17 @@ $image_size: 150px;
         text-align: center;
         text-shadow: 0px 0px 10px #888888;
         
-        h1{
-            font-size:6rem;
-        }
     }
 }
 
 #about_me{
-    background:#ccc;
+    background:$color;
     text-align: center;
     margin:0;
     padding:0;
     
     .container{
         margin: 10px auto;
-        p{
-            font-size: 1rem;
-        }
         .about_me_image{
             width:$image_size;
             height:$image_size;
@@ -55,13 +54,29 @@ $image_size: 150px;
         vertical-align: top;
 
         .project_image{
-            width:150px;
+            width:$image_size;
+            height:$image_size;
             margin:30px;
         }
 
         .link_image{
-            width:40px;
-            height:40px;        
+            width:$link_img_len;
+            height:$link_img_len;        
         }
+    }
+}
+
+#companies{
+    background:white;
+    padding:$small_margin;
+    margin:0;
+    text-align: center;
+    
+    .company{
+            
+        .company_image{
+            max-width:$image_size + 20px;
+            max-height:$image_size + 20px;
+        }        
     }
 }

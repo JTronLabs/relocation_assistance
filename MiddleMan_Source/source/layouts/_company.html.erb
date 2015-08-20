@@ -1,0 +1,15 @@
+<% 
+#set default values for optional arugments
+description = "" unless defined? description
+%>
+
+<div class="col-lg-3 col-lg-offset-1">
+    <div class="company">
+        <%= image_tag(company_image_location, class:"company_image col-lg-6") %>
+
+        <div class="company_info col-lg-6">
+            <h5><%= title %></h5>
+            <p><%= description %></p>
+        </div>
+    </div>
+</div>
