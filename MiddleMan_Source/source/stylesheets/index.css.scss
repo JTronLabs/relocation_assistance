@@ -1,6 +1,6 @@
 $title_height: 100%;
 $row_height: 75%;
-$image_size: 250px;
+$image_size: 170px;
 $link_img_len: 40px;
 $company_info_len: 300px;
 $row_item_padding: 75px;
@@ -77,8 +77,8 @@ $color: rgb(181,153,92);
     .company{
             
         .company_image{
-            max-width:$image_size + 20px;
-            max-height:$image_size + 20px;
+            max-width:$image_size + $image_size / 4;
+            max-height:$image_size + $image_size / 4;
         }        
     }
 }
