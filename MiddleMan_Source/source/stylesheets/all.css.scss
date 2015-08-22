@@ -3,7 +3,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-$footer_img_len:60px;
+$footer_img_len:35px;
 $small_margin: 10px;
 $navbar_height: 50px;
 $row_item_padding: 75px;
@@ -35,7 +35,11 @@ html{
     }
 }
 
-
+.collapsed{
+    height: $navbar_height;
+    margin:15px;
+    width:auto;
+}
 
 footer{
     color:white;

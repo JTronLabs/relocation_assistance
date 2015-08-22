@@ -7268,43 +7268,49 @@ html {
   .navbar .navbar-nav {
     text-align: center; }
 
-/* line 40, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
+/* line 38, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
+.collapsed {
+  height: 50px;
+  margin: 15px;
+  width: auto; }
+
+/* line 44, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
 footer {
   color: white;
   background: #333333;
   text-align: center;
   margin: 0px;
   padding: 75px 0px; }
-  /* line 47, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
+  /* line 51, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
   footer img {
     margin: 10px;
-    width: 60px;
-    height: 60px; }
+    width: 35px;
+    height: 35px; }
 
-/* line 54, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
+/* line 58, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
 h1 {
   font-size: 4.5rem; }
 
-/* line 57, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
+/* line 61, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
 h2 {
   font-size: 3.5rem; }
 
-/* line 60, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
+/* line 64, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
 h3 {
   font-size: 2.5rem; }
 
-/* line 63, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
+/* line 67, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
 h4 {
   font-size: 1.8rem; }
 
-/* line 66, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
+/* line 70, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
 h5 {
   font-size: 1.6rem; }
 
-/* line 69, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
+/* line 73, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
 h6 {
   font-size: 1.1rem; }
 
-/* line 72, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
+/* line 76, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
 p {
   font-size: 1rem; }
