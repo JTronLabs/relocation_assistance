@@ -5,7 +5,7 @@
 
 $footer_img_len:35px;
 $small_margin: 10px;
-$navbar_height: 50px;
+$navbar_height: 4rem;
 $row_item_padding: 75px;
 $rem_base_font: 26px;
 
@@ -16,11 +16,9 @@ body {
 
 html{
     height: 100%;
-    font-size: $rem_base_font;
 }
 
 .navbar{
-    font-size: 1rem;
     
     li{
         a{
@@ -54,71 +52,4 @@ footer{
         width: $footer_img_len;
         height:$footer_img_len;
     }
-}
-
-h1{
-    font-size: 4.8rem;    
-}
-h2{
-    font-size: 3.5rem;    
-}
-h3{
-    font-size: 2.5rem;    
-}
-h4{
-    font-size: 2rem;    
-}
-h5{
-    font-size: 1.6rem;    
-}
-h6{
-    font-size: 1.2rem;
-}
-p{
-    font-size: 1rem;    
-}
-
-
-
-
-
-
-
-/* Large desktops and laptops */
-@media (min-width: 1200px) {
-    html{
-        font-size: $rem_base_font;
-    }
-}
-
-/* Landscape tablets and medium desktops */
-@media (min-width: 992px) and (max-width: 1199px) {
-    html{
-        font-size: $rem_base_font - 2px;
-    }
-
-}
-
-/* Portrait tablets and small desktops */
-@media (min-width: 768px) and (max-width: 991px) {
-    html{
-        font-size: $rem_base_font - 4px;
-    }
-
-}
-
-/* Landscape phones and portrait tablets */
-@media (max-width: 767px) {
-    html{
-        font-size: $rem_base_font - 6px;
-    }
-
-}
-
-/* Portrait phones and smaller */
-@media (max-width: 480px) {
-    html{
-        font-size: $rem_base_font - 8px;
-    }
-
 }

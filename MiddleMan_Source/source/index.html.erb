@@ -6,17 +6,17 @@ css_page: index
     
     <%= partial "layouts/nav_bar" %>
     
-    <div id="index_top">
+    <div id="index_intro">
         <h1>James Lowrey</h1>
-        <h5>Developer</h5>
+        <h2>Developer</h2>
     </div>
 </div>
 
 <span id="me"></span>
 <div class="row index_row" id="about_me">
     <div class="container">
-        <h3>About Me</h3>
-        <p>Striving to do three things</p>
+        <h1>About Me</h1>
+        <h3>Striving to do three things</h3>
         <%= partial 'layouts/about_me', locals:{
             about_me_image_location: "code.png",
             title: "Code"} %>
@@ -32,7 +32,7 @@ css_page: index
 
 <span id="my_companies"></span>
 <div class="row index_row" id="companies">
-        <h3>Companies</h3>
+        <h1>Companies</h1>
         <%= partial 'layouts/company', locals:{
             company_image_location: "netapp-logo.png",
             title: "Netapp",
@@ -43,16 +43,17 @@ css_page: index
             title: "Baker Hughes",
             description: "Automated testing, Agile Practices, and Web design."} %>
 
+
         <%= partial 'layouts/company', locals:{
             company_image_location: "ohio-state-logo.jpeg",
             title: "Ohio State University",
-            description: "Helping students with graph theory and algorithm analysis."} %>
+            description: "Tutored students in graph theory and algorithm analysis."} %>
 
 </div>
 
 <span id="my_projects"></span>
 <div class="row index_row" id="individual_project">
-    <h3>Individual Projects</h3>
+    <h1>Individual Projects</h1>
     
     <%= partial 'layouts/project', locals:{
         project_image_location: "JASIG.png",
