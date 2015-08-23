@@ -7245,72 +7245,98 @@ button.close {
   /* line 18, /home/james/.rvm/gems/ruby-2.2.1/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_responsive-visibility.scss */
   .hidden-print {
     display: none !important; } }
-/* line 12, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
+/* line 13, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
 body {
   height: 100%; }
 
-/* line 16, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
+/* line 17, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
 html {
   height: 100%;
-  font-size: 22px; }
+  font-size: 26px; }
 
-/* line 21, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
+/* line 22, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
 .navbar {
   font-size: 1rem; }
-  /* line 25, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
+  /* line 26, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
   .navbar li a {
     line-height: 50px; }
-  /* line 29, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
+  /* line 30, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
   .navbar .navbar-icon {
     width: auto;
     height: 50px; }
-  /* line 33, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
+  /* line 34, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
   .navbar .navbar-nav {
     text-align: center; }
 
-/* line 38, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
+/* line 39, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
 .collapsed {
   height: 50px;
   margin: 15px;
   width: auto; }
 
-/* line 44, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
+/* line 45, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
 footer {
   color: white;
   background: #333333;
   text-align: center;
   margin: 0px;
   padding: 75px 0px; }
-  /* line 51, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
+  /* line 52, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
   footer img {
     margin: 10px;
     width: 35px;
     height: 35px; }
 
-/* line 58, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
+/* line 59, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
 h1 {
-  font-size: 4.5rem; }
+  font-size: 4.8rem; }
 
-/* line 61, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
+/* line 62, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
 h2 {
   font-size: 3.5rem; }
 
-/* line 64, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
+/* line 65, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
 h3 {
   font-size: 2.5rem; }
 
-/* line 67, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
+/* line 68, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
 h4 {
-  font-size: 1.8rem; }
+  font-size: 2rem; }
 
-/* line 70, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
+/* line 71, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
 h5 {
   font-size: 1.6rem; }
 
-/* line 73, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
+/* line 74, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
 h6 {
-  font-size: 1.1rem; }
+  font-size: 1.2rem; }
 
-/* line 76, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
+/* line 77, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
 p {
   font-size: 1rem; }
+
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
+  /* line 89, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
+  html {
+    font-size: 26px; } }
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+  /* line 96, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
+  html {
+    font-size: 24px; } }
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 104, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
+  html {
+    font-size: 22px; } }
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+  /* line 112, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
+  html {
+    font-size: 20px; } }
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+  /* line 120, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/all.css.scss */
+  html {
+    font-size: 18px; } }
