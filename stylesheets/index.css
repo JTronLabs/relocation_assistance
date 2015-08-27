@@ -23,49 +23,54 @@ h3 {
     text-align: center;
     text-shadow: 0px 0px 10px #888888; }
     /* line 34, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/index.css.scss */
+    #james #index_intro img {
+      border-radius: 10%;
+      width: 100px;
+      height: auto; }
+    /* line 40, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/index.css.scss */
     #james #index_intro h1 {
       font-size: 8.5rem; }
 
-/* line 40, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/index.css.scss */
+/* line 46, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/index.css.scss */
 #about_me {
   background: #b5995c;
   text-align: center;
   margin: 0;
   padding: 75px 0px; }
-  /* line 46, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/index.css.scss */
+  /* line 52, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/index.css.scss */
   #about_me .container {
     margin: 10px auto; }
-    /* line 48, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/index.css.scss */
+    /* line 54, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/index.css.scss */
     #about_me .container .about_me_image {
       width: 170px;
       height: 170px; }
 
-/* line 55, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/index.css.scss */
+/* line 61, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/index.css.scss */
 #individual_project {
   text-align: center;
   margin: 0;
   padding: 0;
   padding: 75px 0px; }
-  /* line 61, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/index.css.scss */
+  /* line 67, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/index.css.scss */
   #individual_project .project {
     vertical-align: top; }
-    /* line 64, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/index.css.scss */
+    /* line 70, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/index.css.scss */
     #individual_project .project .project_image {
       width: 170px;
       height: 170px;
       margin: 30px; }
-    /* line 70, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/index.css.scss */
+    /* line 76, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/index.css.scss */
     #individual_project .project .link_image {
       width: 40px;
       height: 40px; }
 
-/* line 77, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/index.css.scss */
+/* line 83, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/index.css.scss */
 #companies {
   background: white;
   padding: 75px 0px;
   margin: 0;
   text-align: center; }
-  /* line 85, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/index.css.scss */
+  /* line 91, /home/james/Documents/jtronlabs_website/MiddleMan_Source/source/stylesheets/index.css.scss */
   #companies .company .company_image {
     max-width: 212.5px;
     max-height: 212.5px; }
