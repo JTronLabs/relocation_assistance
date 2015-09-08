@@ -68,9 +68,13 @@ h3{
         vertical-align: top;
 
         .project_image{
-            width:$image_size;
-            height:$image_size;
-            margin:30px;
+            a{
+                img{
+                    width:$image_size;
+                    height:$image_size;
+                    margin:30px;
+                }
+            }
         }
 
         .link_image{
@@ -87,10 +91,18 @@ h3{
     text-align: center;
     
     .company{
-            
         .company_image{
-            max-width:$image_size + $image_size / 4;
-            max-height:$image_size + $image_size / 4;
-        }        
+            a{
+                img{
+                    display: inline-block;
+                    width:$image_size;
+                    height:auto;
+                }
+            }
+        }
+        
+        .company_info{
+            display: inline-block;
+        }
     }
 }

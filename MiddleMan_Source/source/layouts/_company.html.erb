@@ -3,13 +3,13 @@
 description = "" unless defined? description
 %>
 
-<div class="col-lg-4">
-    <div class="company">
-        <%= image_tag(company_image_location, class:"company_image col-lg-6") %>
+<div class="company col-lg-4">
+    <div class="company_image col-lg-6">
+        <%= link_to image_tag(company_image_location), company_link %>
+    </div>
 
-        <div class="company_info col-lg-6">
-            <h2><%= title %></h2>
-            <h4><%= description %></h4>
-        </div>
+    <div class="company_info col-lg-6">
+        <h2><%= title %></h2>
+        <h4><%= description %></h4>
     </div>
 </div>

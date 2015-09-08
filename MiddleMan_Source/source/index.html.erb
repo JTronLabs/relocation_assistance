@@ -9,12 +9,9 @@ css_page: index
     <div id="index_intro">
         <h1>James Lowrey</h1>
         <h2>Developer</h2>
-        <%= image_tag("left.jpg") %>
-        <%= image_tag("mid.jpg") %>
-        <%= image_tag("right.jpg") %>
     </div>
 </div>
-
+<!--
 <span id="me"></span>
 <div class="row index_row" id="about_me">
     <div class="container">
@@ -31,7 +28,7 @@ css_page: index
             title: "Grow"} %>
     </div>
 </div>
-
+-->
 
 <span id="my_companies"></span>
 <div class="row index_row" id="companies">
@@ -39,17 +36,20 @@ css_page: index
         <%= partial 'layouts/company', locals:{
             company_image_location: "netapp-logo.png",
             title: "Netapp",
+            company_link:"http://www.netapp.com/",
             description: "Engineering driver solutions for improved server technology."} %>
 
         <%= partial 'layouts/company', locals:{
             company_image_location: "Baker_Hughes_Logo.png",
             title: "Baker Hughes",
+            company_link:"http://www.bakerhughes.com/",
             description: "Automated testing, Agile Practices, and Web design."} %>
 
 
         <%= partial 'layouts/company', locals:{
             company_image_location: "ohio-state-logo.jpeg",
             title: "Ohio State University",
+            company_link:"http://www.osu.edu/",
             description: "Tutored students in graph theory and algorithm analysis."} %>
 
 </div>
@@ -61,29 +61,30 @@ css_page: index
     <%= partial 'layouts/project', locals:{
         project_image_location: "JASIG.png",
         title: "JASIG",
-        github_link:"https://github.com/JTronLabs/Space-Shooter-Android",
-        android_link:"https://play.google.com/store/apps/details?id=com.jtronlabs.space_shooter"} %>
+        primary_link: "https://play.google.com/store/apps/details?id=com.jtronlabs.space_shooter",
+        github_link:"https://github.com/JTronLabs/Space-Shooter-Android"} %>
     
     <%= partial 'layouts/project', locals:{
         project_image_location: "crash_boom_bop.png",
         title: "Crash Boom Bop",
-        github_link: "https://github.com/JTronLabs/CrashBoomBop",
-        android_link:"https://play.google.com/store/apps/details?id=com.jtronlabs.crash_boom_bop_free"} %>
+        primary_link: "https://play.google.com/store/apps/details?id=com.jtronlabs.crash_boom_bop_free",
+        github_link: "https://github.com/JTronLabs/CrashBoomBop"} %>
     
     <%= partial 'layouts/project', locals:{
         project_image_location: "fun_groups.png",
         title: "Fun Groups!",
-        github_link: "https://github.com/JTronLabs/FunGroups",
-        android_link:"https://play.google.com/store/apps/details?id=com.jtronlabs.fun_groups"} %>
+        primary_link: "https://play.google.com/store/apps/details?id=com.jtronlabs.fun_groups",
+        github_link: "https://github.com/JTronLabs/FunGroups"} %>
     
     <%= partial 'layouts/project', locals:{
         project_image_location: "uact.png",
         title: "UACT",
+        primary_link:"https://github.com/JTronLabs/UACT",
         github_link: "https://github.com/JTronLabs/UACT",} %>
     
     <%= partial 'layouts/project', locals:{
         project_image_location: "buddy.jpg",
         title: "This Website",
-        github_link:"https://github.com/JTronLabs/JTronLabs.github.io",
-        website_link:"http://jtronlabs.github.io/"} %>
+        primary_link:"http://jtronlabs.github.io/",
+        github_link: "https://github.com/JTronLabs/JTronLabs.github.io"} %>
 </div>
