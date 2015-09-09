@@ -4,4 +4,5 @@ Personal website of James Lowrey, JTronlabs. Currently displays what companies I
 
 ####MiddleMan
 use 'middleman build' to compile assets to usable css and html files
+
 use 'middleman server' to view code changes in real-time at localhost:4567
