@@ -10,7 +10,7 @@ function initAutocomplete() {
   // location types.
   autocomplete = new google.maps.places.Autocomplete(
       (document.getElementById('autocomplete')),
-      {types: ['geocode']}
+      {types: ['(cities)']}
     );
 
   // When the user selects an address from the dropdown, populate the address
