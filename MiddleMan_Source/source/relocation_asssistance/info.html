@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+    <!-- Google Places API-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVDbxc1SteM9tVBa36-oYy8ewyGGm_iMQ&signed_in=true&libraries=places&callback=initAutocomplete"async defer></script>
+    <!-- L2.io API for getting client's ip address-->
+    <script type="text/javascript" src="https://l2.io/ip.js?var=userip"></script>
+
+    <!-- Scripts written by JTronLabs -->
+    <script src="google_places_api.js"></script>
+    <script src="glassdoor_api.js"></script>
+
+
+    <meta charset="utf-8">
+
+    <title>JTronLabs</title>
+  </head>
+
+
+  <body>
+    <form>
+      <input id="autocomplete" placeholder="Enter your address" type="text"></input>
+      <input id="company_name" placeholder="Enter your company's name" type="text"></input>
+      <input id="job_position_title" placeholder="Enter your job position title" type="text"></input>
+
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+
+</html>
