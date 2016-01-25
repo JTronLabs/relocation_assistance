@@ -9,7 +9,11 @@ function glassdoor_input_field_handling(){
       "&format=json"+
       "&v=1"+
       "&action=employers"+
-      "&q="+$(this).val();
+      //"&pn=1"+
+      //"&ps=20"+
+      //"&state="+"california"+
+      //"&city="+"san francisco";
+      "&q="+String($(this).val());
     console.log("Glassdoor API request: "+request);
 
 
@@ -22,6 +26,9 @@ function glassdoor_input_field_handling(){
            success: function(data, status, xhr) {
              console.log(data);
              console.log(status);
+           },
+           error: function(jqXHR, textStatus, errorThrown) {
+            console.log(jqXHR,textStatus, errorThrown);
            }
        });
 

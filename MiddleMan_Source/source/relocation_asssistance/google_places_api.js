@@ -20,5 +20,6 @@ function initAutocomplete() {
 
 
 function respondToPlaceSelection() {
-  console.log( autocomplete.getPlace() );
+  //console.log( autocomplete.getPlace() );
+  forecast_api_call(autocomplete.getPlace());
 }
