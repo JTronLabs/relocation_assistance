@@ -21,7 +21,8 @@ function initAutocomplete() {
 
 function respondToPlaceSelection() {
   var place = autocomplete.getPlace();
-  console.log( place );
-  forecast_api_call(place);
+  //console.log( place );
+  forecast_api_call(place.geometry.location.lat(), place.geometry.location.lng());
+  meetup_groups_nearby(place.geometry.location.lat(), place.geometry.location.lng());
   //trulia_api_call(place["address_components"][0]["long_name"], place["address_components"][2]["short_name"]);//city,state
 }

@@ -3,13 +3,13 @@
 var monthNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
 ];
-var dayNames = ["Su", "M", "Tu", "W", "Th", "F",
-  "Sa"
+var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday",
+  "Saturday"
 ];
 
-function forecast_api_call(place){
+function forecast_api_call(lat,lng){
     var request = "https://api.forecast.io/forecast/2939c13b8f65b1892eefa9d96c60669b/"
-      +place.geometry.location.lat()+","+place.geometry.location.lng();
+      +lat+","+lng;
     console.log("Forecast API request: "+request);
 
 
@@ -70,7 +70,7 @@ function get_weather_html(current_element,index,array){
 
       var html =
       "<div class=\"weather_item\">"
-      +"    <div class=\"date\"><strong>"+dayNames[today.getDay()]+" "+monthNames[today.getMonth()]+" "+today.getDate()+", "+today.getFullYear()
+      +"    <div class=\"date\"><strong>"+dayNames[today.getDay()]+" "+monthNames[today.getMonth()]+" "+today.getDate()//+", "+today.getFullYear()*=
       +"      </strong></div>"
       +"    <div class=\"weather_icon\">"
       +"       <img src=\"img/weather_icons/"+iconName+".svg\" alt=\"rain\" >"

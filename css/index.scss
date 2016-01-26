@@ -1,36 +1,41 @@
-//compile to CSS with: sass index.scss:index.css
+//compile to CSS with: sass --watch index.scss:index.css
 
 $weather_info_height:    40px;
-$weather_icon_height:    150px;
+$weather_item_width:    100px;
+$weather_icon_width: $weather_item_width * .8;
+
+$meetups_icon_width: 120px;
 
 #weather{
   text-align: center;
+  min-height: $weather_item_width;
+  background-color: #4c4222;
 
   .weather_item{
     //colors + box shading
-    background-color: #00ccff;
+    background-color: #D69723;
     border: 2px solid;
     border-radius: 25px;
-    box-shadow: 4px 4px 2px #888888;
-    padding:5px;
+    box-shadow: 4px 4px 2px black;
+    padding:10px;
+    margin:2px;
 
     //alignment and sizing
     text-align: center;
     display: inline-block;
-    height:$weather_icon_height * 1.5;
-    width:$weather_icon_height * 1.7;
+    width:$weather_item_width * 1.7;
     margin: 10px;
     .date{
       font-size: 1.1em;
     }
     .weather_icon{
       img{
-        height:$weather_icon_height*.8;
-        width:$weather_icon_height*.8;
+        height:$weather_icon_width;
+        width:$weather_icon_width;
       }
     }
     .weather_info{
-      height:$weather_info_height;
+      display: block;
       span{
         display: inline-block;
         img{
@@ -45,4 +50,34 @@ $weather_icon_height:    150px;
       }
     }
   }
+}
+
+#meetups{
+  vertical-align: middle;
+  text-align: center;
+  background-color: #44BBE3;
+  .meetup_item{
+    //colors + box shading
+    background-color: white;
+    display: inline-block;
+    border: 2px solid;
+    border-radius: 25px;
+    box-shadow: 4px 4px 2px black;
+    width:$meetups_icon_width * 1.2;
+    padding:10px;
+    margin:10px;
+    text-decoration: none;
+    color:black;
+    img{
+      border-radius: 10px;
+      width:$meetups_icon_width;
+      height:$meetups_icon_width;
+    }
+    p{
+      font-size: 0.8em;
+      margin:1px;
+      padding:0px;
+    }
+  }
+
 }

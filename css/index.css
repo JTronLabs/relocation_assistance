@@ -1,23 +1,25 @@
 #weather {
-  text-align: center; }
+  text-align: center;
+  min-height: 100px;
+  background-color: #4c4222; }
   #weather .weather_item {
-    background-color: #00ccff;
+    background-color: #D69723;
     border: 2px solid;
     border-radius: 25px;
-    box-shadow: 4px 4px 2px #888888;
-    padding: 5px;
+    box-shadow: 4px 4px 2px black;
+    padding: 10px;
+    margin: 2px;
     text-align: center;
     display: inline-block;
-    height: 225px;
-    width: 255px;
+    width: 170px;
     margin: 10px; }
     #weather .weather_item .date {
       font-size: 1.1em; }
     #weather .weather_item .weather_icon img {
-      height: 120px;
-      width: 120px; }
+      height: 80px;
+      width: 80px; }
     #weather .weather_item .weather_info {
-      height: 40px; }
+      display: block; }
       #weather .weather_item .weather_info span {
         display: inline-block; }
         #weather .weather_item .weather_info span img {
@@ -27,5 +29,29 @@
           position: relative;
           top: 50%;
           transform: translateY(-75%); }
+
+#meetups {
+  vertical-align: middle;
+  text-align: center;
+  background-color: #44BBE3; }
+  #meetups .meetup_item {
+    background-color: white;
+    display: inline-block;
+    border: 2px solid;
+    border-radius: 25px;
+    box-shadow: 4px 4px 2px black;
+    width: 144px;
+    padding: 10px;
+    margin: 10px;
+    text-decoration: none;
+    color: black; }
+    #meetups .meetup_item img {
+      border-radius: 10px;
+      width: 120px;
+      height: 120px; }
+    #meetups .meetup_item p {
+      font-size: 0.8em;
+      margin: 1px;
+      padding: 0px; }
 
 /*# sourceMappingURL=index.css.map */
