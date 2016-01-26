@@ -39,7 +39,13 @@ function update_html_with_forecast_results(data){
 function get_weather_html(current_element,index,array){
       var today = new Date();
       today.setDate(today.getDate() + index);
+
+      //cover special cases so the icon name will match its respective image name
       var iconName = current_element["icon"];
+      if(iconName == "sleet"){
+        iconName = "hail";
+      }
+      
       var minTmp = Math.round(current_element["temperatureMin"]);
       var maxTmp = Math.round(current_element["temperatureMax"]);
       var iconName = current_element["icon"];
