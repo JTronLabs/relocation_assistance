@@ -19,6 +19,7 @@ function meetup_groups_nearby(lat,lng){
   +"&only=name,link,members,group_photo.photo_link,category"
   +"&sign=true"
   +"&key=28137b13a15737f5760612a7f252523";
+  //console.log("Meetup API request: "+request);
 
 
   $.ajax({
@@ -28,7 +29,7 @@ function meetup_groups_nearby(lat,lng){
        dataType : 'jsonp',   //you may use jsonp for cross origin request
        crossDomain:true,
        success: function(data, status, xhr) {
-         console.log(data);
+         //console.log(data);
          $("#meetups").empty();
 
          if(data["data"].length > 0){

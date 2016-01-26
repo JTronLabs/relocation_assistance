@@ -10,7 +10,7 @@ var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"
 function forecast_api_call(lat,lng){
     var request = "https://api.forecast.io/forecast/2939c13b8f65b1892eefa9d96c60669b/"
       +lat+","+lng;
-    console.log("Forecast API request: "+request);
+    //console.log("Forecast API request: "+request);
 
 
     $.ajax({
@@ -20,12 +20,12 @@ function forecast_api_call(lat,lng){
            dataType : 'jsonp',   //you may use jsonp for cross origin request
            crossDomain:true,
            success: function(data, status, xhr) {
-             //console.log(data);
+             console.log(data);
              //console.log(status);
              update_html_with_forecast_results(data);
            },
            error: function(jqXHR, textStatus, errorThrown) {
-             update_html_with_forecast_results();
+             chupdate_html_with_forecast_results();
            }
        });
 }
@@ -46,27 +46,41 @@ function get_weather_html(current_element,index,array){
       var today = new Date();
       today.setDate(today.getDate() + index);
 
-      //cover special cases so the icon name will match its respective image name
-      var iconName = current_element["icon"];
-      if(iconName == "sleet"){
-        iconName = "hail";
-      }
-
       var minTmp = Math.round(current_element["temperatureMin"]);
       var maxTmp = Math.round(current_element["temperatureMax"]);
       var iconName = current_element["icon"];
       var windSpd = current_element["windSpeed"];
-      var precipProbability = Math.round(current_element["precipProbability"] * 100);
+      var precipProbability = Math.ceil(current_element["precipProbability"] * 100);
 
+      //cover special cases so the icon name will match its respective image name
+      var iconName = current_element["icon"];
       /*
-      //if precip intensity is small (won't rain), don't include it
-      var precipIntensity = current_element["precipIntensity"];
-      var precipIntensityString =  ", "+precipIntensity+"in/hr";
-      if(precipIntensity < 0.01){
-        precipIntensityString = "";
+      if(precipProbability > 50){
+        iconName = current_element["precipType"];
       }
       */
+      if(iconName == "sleet"){
+        iconName = "hail";
+      }
+
+      //:: from Forecast.io ::
+      //A very rough guide is that a value of 0 in./hr. corresponds to no precipitation,
+      //0.002 in./hr. corresponds to very light precipitation, 0.017 in./hr. corresponds
+      //to light precipitation, 0.1 in./hr. corresponds to moderate precipitation,
+      //and 0.4 in./hr. corresponds to heavy precipitation.
+      var precipIntensity = current_element["precipIntensity"];
       var precipIntensityString =  "";
+      if(precipIntensity < 0.002){
+        precipIntensityString = "Very light";
+      }else if(precipIntensity < 0.017){
+        precipIntensityString = "Light";
+      }else if(precipIntensity < 0.1){
+        precipIntensityString = "Moderate";
+      }else if(precipIntensity < 0.4){
+        precipIntensityString = "Heavy";
+      }else{
+        precipIntensityString = "Very Heavy";
+      }
 
       var html =
       "<div class=\"weather_item\">"
@@ -86,7 +100,7 @@ function get_weather_html(current_element,index,array){
       +"      </span>"
       +"      <span class=\"precip\">"
       +"       <img src=\"img/weather_icons/droplet.svg\" alt=\"Precipitation\" >"
-      +"       <span id=\"precip_value\">"+precipProbability+"%"+precipIntensityString+"</span>"
+      +"       <span id=\"precip_value\">"+precipIntensityString+", "+precipProbability+"%</span>"
       +"      </span>"
       +"    </div>"
       +"</div>";
