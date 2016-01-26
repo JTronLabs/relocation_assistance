@@ -20,12 +20,12 @@ function forecast_api_call(place){
            dataType : 'jsonp',   //you may use jsonp for cross origin request
            crossDomain:true,
            success: function(data, status, xhr) {
-             console.log(data);
-             console.log(status);
+             //console.log(data);
+             //console.log(status);
              update_html_with_forecast_results(data);
            },
            error: function(jqXHR, textStatus, errorThrown) {
-            console.log(textStatus, errorThrown);
+             update_html_with_forecast_results();
            }
        });
 }
@@ -33,7 +33,13 @@ function forecast_api_call(place){
 function update_html_with_forecast_results(data){
   $("#weather").empty();
 
-  data["daily"]["data"].forEach(get_weather_html)
+  data = data || 0;//make data an optional parameter
+
+  if(data == 0){
+    $("#weather").append("<p>Fetching weather data failed, please try again later</p>");
+  }else{
+    data["daily"]["data"].forEach(get_weather_html);
+  }
 }
 
 function get_weather_html(current_element,index,array){
@@ -45,7 +51,7 @@ function get_weather_html(current_element,index,array){
       if(iconName == "sleet"){
         iconName = "hail";
       }
-      
+
       var minTmp = Math.round(current_element["temperatureMin"]);
       var maxTmp = Math.round(current_element["temperatureMax"]);
       var iconName = current_element["icon"];
