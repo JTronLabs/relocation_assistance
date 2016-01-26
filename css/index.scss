@@ -1,5 +1,48 @@
 //compile to CSS with: sass index.scss:index.css
 
-#weather_forecast{
-  background-color:blue;
+$weather_info_height:    40px;
+$weather_icon_height:    150px;
+
+#weather{
+  text-align: center;
+
+  .weather_item{
+    //colors + box shading
+    background-color: #00ccff;
+    border: 2px solid;
+    border-radius: 25px;
+    box-shadow: 4px 4px 2px #888888;
+    padding:5px;
+
+    //alignment and sizing
+    text-align: center;
+    display: inline-block;
+    height:$weather_icon_height * 1.5;
+    width:$weather_icon_height * 1.7;
+    margin: 10px;
+    .date{
+      font-size: 1.1em;
+    }
+    .weather_icon{
+      img{
+        height:$weather_icon_height*.8;
+        width:$weather_icon_height*.8;
+      }
+    }
+    .weather_info{
+      height:$weather_info_height;
+      span{
+        display: inline-block;
+        img{
+          height:$weather_info_height;
+          width:$weather_info_height;
+        }
+        span{
+          position: relative;
+          top: 50%;
+          transform: translateY(-75%);
+        }
+      }
+    }
+  }
 }

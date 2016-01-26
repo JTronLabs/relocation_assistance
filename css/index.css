@@ -1,4 +1,31 @@
-#weather_forecast {
-  background-color: blue; }
+#weather {
+  text-align: center; }
+  #weather .weather_item {
+    background-color: #00ccff;
+    border: 2px solid;
+    border-radius: 25px;
+    box-shadow: 4px 4px 2px #888888;
+    padding: 5px;
+    text-align: center;
+    display: inline-block;
+    height: 225px;
+    width: 255px;
+    margin: 10px; }
+    #weather .weather_item .date {
+      font-size: 1.1em; }
+    #weather .weather_item .weather_icon img {
+      height: 120px;
+      width: 120px; }
+    #weather .weather_item .weather_info {
+      height: 40px; }
+      #weather .weather_item .weather_info span {
+        display: inline-block; }
+        #weather .weather_item .weather_info span img {
+          height: 40px;
+          width: 40px; }
+        #weather .weather_item .weather_info span span {
+          position: relative;
+          top: 50%;
+          transform: translateY(-75%); }
 
 /*# sourceMappingURL=index.css.map */
