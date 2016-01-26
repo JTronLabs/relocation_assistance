@@ -3,7 +3,6 @@
 //Don't think this API is going to work for what I want: listing average climate over time for a given city (seasonally/monthly)
 
 function climate_data_fetch(){
-    var today = new Date();
     var request = "http://www.ncdc.noaa.gov/cdo-web/api/v2/data?"
       +"datasetid=NORMAL_MLY"
       +"&locationid=ZIP:43210"
