@@ -80,6 +80,9 @@ function meetup_stats(lat,lng){
          dataType : 'jsonp',   //you may use jsonp for cross origin request
          crossDomain:true,
          success: function(data, status, xhr) {
+           $("#num_members_bar_chart").empty();
+           $("#num_groups_bar_chart").empty();
+           
            if(data["data"].length > 0){
              var d = reorganize_data_to_array(data["data"]);
              create_num_members_bar_chart(d,data["data"].length)
