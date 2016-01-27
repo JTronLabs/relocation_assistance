@@ -34,6 +34,12 @@
   vertical-align: middle;
   text-align: center;
   background-color: #44BBE3; }
+  #meetups #num_members_bar_chart rect {
+    fill: steelblue; }
+  #meetups #num_members_bar_chart text {
+    fill: white;
+    font: 10px sans-serif;
+    text-anchor: end; }
   #meetups .meetup_item {
     background-color: white;
     display: inline-block;

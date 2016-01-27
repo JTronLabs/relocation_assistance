@@ -56,6 +56,20 @@ $meetups_icon_width: 120px;
   vertical-align: middle;
   text-align: center;
   background-color: #44BBE3;
+
+  #num_members_bar_chart {
+
+     rect {
+      fill: steelblue;
+    }
+
+     text {
+      fill: white;
+      font: 10px sans-serif;
+      text-anchor: end;
+    }
+  }
+
   .meetup_item{
     //colors + box shading
     background-color: white;
