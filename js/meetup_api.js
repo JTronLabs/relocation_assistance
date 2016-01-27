@@ -128,6 +128,11 @@ function reorganize_data_to_array(data){
   return array_data;
 }
 
+
+//D3 source: http://d3js.org/
+/*D3 tutorial sources:
+    http://bost.ocks.org/mike/bar/2/
+ */
 function create_num_members_bar_chart(data,total_num_groups){
   var width = 420,
       barHeight = 20;
