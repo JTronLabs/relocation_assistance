@@ -20,7 +20,7 @@ function forecast_api_call(lat,lng){
            dataType : 'jsonp',   //you may use jsonp for cross origin request
            crossDomain:true,
            success: function(data, status, xhr) {
-             console.log(data);
+             //console.log(data);
              //console.log(status);
              update_html_with_forecast_results(data);
            },

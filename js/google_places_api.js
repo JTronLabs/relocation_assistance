@@ -24,7 +24,6 @@ function respondToPlaceSelection() {
   //console.log( place );
   forecast_api_call(place.geometry.location.lat(), place.geometry.location.lng());
   //meetup_groups_nearby(place.geometry.location.lat(), place.geometry.location.lng());
-  console.log(place);
   meetup_stats(place.geometry.location.lat(), place.geometry.location.lng(),place["address_components"][0]["long_name"]);
   //trulia_api_call(place["address_components"][0]["long_name"], place["address_components"][2]["short_name"]);//city,state
 }

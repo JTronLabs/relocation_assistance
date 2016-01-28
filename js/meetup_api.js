@@ -85,7 +85,8 @@ function meetup_stats(lat,lng,city_name){
 
            if(data["data"].length > 0){
              var d = reorganize_data_to_array(data["data"]);
-             create_num_members_bar_chart(d,data["data"].length,city_name)
+             create_num_members_bar_chart(d)
+             create_num_groups_pie_chart(d, data["data"].length, city_name);
            }else{
              $("#meetups").append("<p>Fetching Meetup.com data failed, please try again later</p>");
            }
@@ -135,8 +136,8 @@ function reorganize_data_to_array(data){
 /*D3 tutorial sources:
     http://bost.ocks.org/mike/bar/2/
  */
-function create_num_members_bar_chart(data,total_num_groups,city_name){
-  //organize the data to be descending
+function create_num_members_bar_chart(data){
+  //organize the data to be descending with respect to number of people
   data.sort(function(a,b){
     return a["num_members"] < b["num_members"];
   });
@@ -145,7 +146,7 @@ function create_num_members_bar_chart(data,total_num_groups,city_name){
       totalWid = 500,
       totalHeight = 500,
       width = totalWid - margin.left - margin.right,
-      height = totalHeight - margin.top - margin.bottom;//height is total number of bars * height of each bar
+      height = totalHeight - margin.top - margin.bottom;
 
   //creates a function that maps from data space (domain) to display/pixel space (range)
   var x = d3.scale.linear()
@@ -174,7 +175,7 @@ function create_num_members_bar_chart(data,total_num_groups,city_name){
       .attr("width", totalWid)//set width of outer SVG container's HTML element. Add in the margin so the enrite graphs size remains constant
       .attr("height", totalHeight)
   .append("g")//apply margins by offsetting the origin of the chart area by the top-left margin
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");//apply margins by offsetting the origin of the chart area by the top-left margin
 
   //add a title to the chart at the top middle
   chart.append("text")
@@ -182,7 +183,7 @@ function create_num_members_bar_chart(data,total_num_groups,city_name){
     .attr("y", 5 - (margin.top / 2) )
     .attr("text-anchor", "middle")
     .style("font-size", "16px")
-    .text(total_num_groups+" Most Active Groups in "+city_name);
+    .text("Number of People in Each Group Category");
 
   //append x axis to the chart
   chart.append("g")
@@ -218,5 +219,65 @@ function create_num_members_bar_chart(data,total_num_groups,city_name){
       })
       .attr("y", y.rangeBand() / 2)//approximately center the text vertically
       .attr("dy", ".35em");//exactly center text vertically (text is .7em)
+
+}
+
+// Copied and modified from: https://gist.github.com/enjalot/1203641
+function create_num_groups_pie_chart(data,total_num_groups,city_name){
+  //organize the data to be descending with respect to number of GROUPS
+  data.sort(function(a,b){
+    return a["num_groups"] < b["num_groups"];
+  });
+
+    var color = d3.scale.category20c();     //builtin range of colors
+
+    var totalWid = 500,
+        totalHeight = totalWid,
+        margin = {top: totalWid/4, right: totalWid/4, bottom: totalWid/4, left: totalWid/4},//this acts as svg padding, and allows space for the x,y axis to be placed on the graph
+        width = totalWid - margin.left - margin.right,
+        height = totalHeight - margin.top - margin.bottom,
+        labelr = r + 30, // radius for label anchor from text to pie chart
+        r = width / 2,//radius for pie chart sizing
+        arc = d3.svg.arc().innerRadius(r * .4).outerRadius(r);             //this will create <path> elements for us using arc data
+
+    var chart = d3.select("#num_groups_bar_chart");
+
+    //add a title to the chart at the top middle
+    chart.append("text")
+      .attr("x", (width / 2) + margin.left)
+      .attr("y", margin.top / 2 )
+      .attr("text-anchor", "middle")
+      .style("font-size", "16px")
+      .text("Group Composition in "+city_name+" ("+total_num_groups+" Groups)");
+
+    var vis = chart
+        .data([data])
+            .attr("width", totalWid)           //set the width and height of our visualization (these will be attributes of the <svg> tag
+            .attr("height", totalHeight)
+      .append("g")                    //make a group to hold our pie chart, and move it relative to the entire svg
+        .attr("transform", "translate(" + (r+margin.left) + "," + (r+margin.top) + ")")    //move the center of the pie chart from 0, 0 to radius, radius (and apply margins!)
+
+    vis.append("g")                    //make a group to hold our pie chart, and move it relative to the entire svg
+      .attr("transform", "translate(" + (r+margin.left) + "," + (r+margin.top) + ")")    //move the center of the pie chart from 0, 0 to radius, radius (and apply the margins!)
+
+    var pie = d3.layout.pie()           //this will create arc data for us given a list of values
+        .value(function(d) { return d.num_groups; });    //we must tell it out to access the value of each element in our data array
+    var arcs = vis.selectAll("g.slice")     //this selects all <g> elements with class slice (there aren't any yet)
+        .data(pie)                          //associate the generated pie data (an array of arcs, each having startAngle, endAngle and value properties)
+        .enter()                            //this will create <g> elements for every "extra" data element that should be associated with a selection. The result is creating a <g> for every object in the data array
+            .append("g")                    //create a group to hold each slice (we will have a <path> and a <text> element associated with each slice)
+                .attr("class", "slice");    //allow us to style things in the slices (like text)
+        arcs.append("path")
+                .attr("fill", function(d, i) { return color(i); } ) //set the color for each slice to be chosen from the color function defined above
+                .attr("d", arc);                                    //this creates the actual SVG path using the associated data (pie) with the arc drawing function
+        arcs.append("text")                                         //add a label to each slice
+                .attr("transform", function(d) {                    //set the label's origin to the center of the arc
+                //we have to make sure to set these before calling arc.centroid
+                d.innerRadius = 0;
+                d.outerRadius = r;
+                return "translate(" + arc.centroid(d) + ")";        //this gives us a pair of coordinates like [50, 50]
+            })
+            .attr("text-anchor", "middle")                          //center the text on it's origin
+            .text(function(d, i) { return data[i].name; });        //get the label from our original data array
 
 }
