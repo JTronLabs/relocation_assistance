@@ -60,7 +60,7 @@ function sort_meetup_data(a, b){
     return (a["category"] < b["category"]) ? 1 : -1;
 }
 
-function meetup_stats(lat,lng){
+function meetup_stats(lat,lng,city_name){
     var request = "https://api.meetup.com/find/groups?"
     +"&photo-host=public"
     +"&lat="+lat
@@ -85,7 +85,7 @@ function meetup_stats(lat,lng){
 
            if(data["data"].length > 0){
              var d = reorganize_data_to_array(data["data"]);
-             create_num_members_bar_chart(d,data["data"].length)
+             create_num_members_bar_chart(d,data["data"].length,city_name)
            }else{
              $("#meetups").append("<p>Fetching Meetup.com data failed, please try again later</p>");
            }
@@ -135,15 +135,17 @@ function reorganize_data_to_array(data){
 /*D3 tutorial sources:
     http://bost.ocks.org/mike/bar/2/
  */
-function create_num_members_bar_chart(data,total_num_groups){
+function create_num_members_bar_chart(data,total_num_groups,city_name){
   //organize the data to be descending
   data.sort(function(a,b){
     return a["num_members"] < b["num_members"];
   });
 
-  var margin = {top: 5, right: 5, bottom: 20, left: 90},
-      width = 500 - margin.left - margin.right,
-      totalHeight = 500 - margin.top - margin.bottom;//height is total number of bars * height of each bar
+  var margin = {top: 30, right: 5, bottom: 20, left: 80},//this acts as svg padding, and allows space for the x,y axis to be placed on the graph
+      totalWid = 500,
+      totalHeight = 500,
+      width = totalWid - margin.left - margin.right,
+      height = totalHeight - margin.top - margin.bottom;//height is total number of bars * height of each bar
 
   //creates a function that maps from data space (domain) to display/pixel space (range)
   var x = d3.scale.linear()
@@ -157,30 +159,38 @@ function create_num_members_bar_chart(data,total_num_groups){
 
   var y = d3.scale.ordinal()
     .domain(data.map(function (d) { return d.name; }))
-    .rangeRoundBands([0, totalHeight]);//scales ordinal data to be equal height proportional to the total height
+    .rangeRoundBands([0, height]);//scales ordinal data to be equal height proportional to the total height
 
   //bind axis to existing x and y scales and set its position relative to graph
   var xAxis = d3.svg.axis()
-    .scale(x)
+    .scale(x)//tells D3 how to scale and place the tick marks
     .tickFormat(d3.format("s"))//format numbers to use K for 1000, M for 1,000,000, etc
     .orient("bottom");
-
   var yAxis = d3.svg.axis()
       .scale(y)
       .orient("left");
 
   var chart = d3.select("#num_members_bar_chart")//select HTML element
-      .attr("width", width + margin.left + margin.right)//set width of outer SVG container's HTML element. Add in the margin so the enrite graphs size remains constant
-      .attr("height", totalHeight + margin.top + margin.bottom)
+      .attr("width", totalWid)//set width of outer SVG container's HTML element. Add in the margin so the enrite graphs size remains constant
+      .attr("height", totalHeight)
   .append("g")//apply margins by offsetting the origin of the chart area by the top-left margin
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-  //append axis to the chart
-  chart.append("g")
-  .attr("class", "x axis")
-  .attr("transform", "translate(0," + totalHeight + ")")
-  .call(xAxis);
+  //add a title to the chart at the top middle
+  chart.append("text")
+    .attr("x", (width / 2) + margin.left)
+    .attr("y", 5 - (margin.top / 2) )
+    .attr("text-anchor", "middle")
+    .style("font-size", "16px")
+    .text(total_num_groups+" Most Active Groups in "+city_name);
 
+  //append x axis to the chart
+  chart.append("g")
+    .attr("class", "x axis")
+    .attr("transform", "translate(0," + height + ")")//move axis down below the graph
+    .call(xAxis);
+
+  //append y axis to the chart
   chart.append("g")
       .attr("class", "y axis")
       .call(yAxis);
