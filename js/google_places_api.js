@@ -20,6 +20,7 @@ function initAutocomplete() {
 
 
 function respondToPlaceSelection() {
+  $('#show_results_btn').prop('disabled', false);
   var place = autocomplete.getPlace();
   //console.log( place );
   forecast_api_call(place.geometry.location.lat(), place.geometry.location.lng());

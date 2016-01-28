@@ -34,9 +34,3 @@ function glassdoor_input_field_handling(){
 
   });
 }
-
-
-
-$( document ).ready(function() {
-  glassdoor_input_field_handling();
-});

@@ -4,6 +4,12 @@
     <meta charset="utf-8">
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+
+    <!-- Latest compiled and minified CSS of Twitter Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript of Twitter Bootstrap-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
     <!-- D3 graphing library -->
     <script src="js/d3.min.js"></script>
 
@@ -11,8 +17,11 @@
     <script src="js/google_places_api.js"></script>
 
     <!--<script src="https://l2.io/ip.js?var=userip"></script>-->  <!-- userip is used in glassdoor's api -->
+    <script src="js/glassdoor_api.js"></script>
+    <script src="js/d3_charting.js"></script>
     <script src="js/forecast_api.js"></script>
     <script src="js/meetup_api.js"></script>
+    <script src="js/misc.js"></script>
 
 
 
@@ -20,19 +29,48 @@
 
 
     <title>JTronLabs</title>
+    <link rel="shortcut icon" href="img/favicon.ico">
   </head>
 
 
   <body>
-    <form>
-      <input id="autocomplete" placeholder="Enter the city you will move to" type="text"></input>
-      <input id="company_name" placeholder="Enter your new company's name" type="text"></input>
-      <input id="job_position_title" placeholder="Enter your job position title" type="text"></input>
+    <section id="landing_page">
+      <form id="form_inputs" class="form-group">
+        <input id="autocomplete" class="form-control" placeholder="Enter the city you will move to" type="text"></input>
+        <input id="company_name" class="form-control" placeholder="Enter your new company's name" type="text"></input>
+        <input id="job_position_title" class="form-control" placeholder="Enter your job position title" type="text"></input>
 
-      <input type="submit" value="Submit">
-    </form>
+        <input id="show_results_btn" class="btn btn-primary" type="button" value="Submit">
+      </form>
+    </section>
 
-    <div>
+    <div id="results">
+
+      <!-- Slightly modified Twitter bootstrap's Default Navbar-->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://jtronlabs.github.io/">JTronLabs</a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul id="new_form_location" class="nav navbar-nav navbar-form">
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+
+
+
+
       <div id="weather"></div>
       <div id="meetups">
         <svg id="num_groups_bar_chart"></svg>

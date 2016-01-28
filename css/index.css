@@ -1,8 +1,31 @@
-#weather {
+html, body {
+  padding: 0;
+  margin: 0; }
+
+#landing_page form {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
   text-align: center;
-  min-height: 80px;
+  margin: 0 auto;
+  display: block;
+  width: 50%;
+  min-width: 250px; }
+  #landing_page form input[type="text"] {
+    text-align: center; }
+
+#results .navbar {
+  margin-bottom: 0; }
+#results #new_form_location form {
+  width: 100%; }
+  #results #new_form_location form input {
+    display: inline-block; }
+#results #weather {
+  text-align: center;
+  min-height: 100px;
   background-color: #4c4222; }
-  #weather .weather_item {
+  #results #weather .weather_item {
     background-color: #D69723;
     border: 2px solid;
     border-radius: 25px;
@@ -11,46 +34,44 @@
     margin: 2px;
     text-align: center;
     display: inline-block;
-    width: 136px;
+    width: 170px;
     margin: 10px; }
-    #weather .weather_item .date {
+    #results #weather .weather_item .date {
       font-size: .9em; }
-    #weather .weather_item .weather_icon {
+    #results #weather .weather_item .weather_icon {
       padding: 4px; }
-      #weather .weather_item .weather_icon img {
-        height: 64px;
-        width: 64px; }
-    #weather .weather_item .weather_info {
+      #results #weather .weather_item .weather_icon img {
+        height: 80px;
+        width: 80px; }
+    #results #weather .weather_item .weather_info {
       display: block; }
-      #weather .weather_item .weather_info span {
+      #results #weather .weather_item .weather_info span {
         display: inline-block; }
-        #weather .weather_item .weather_info span img {
-          height: 20.8px;
-          width: 20.8px; }
-        #weather .weather_item .weather_info span span {
+        #results #weather .weather_item .weather_info span img {
+          height: 20px;
+          width: 20px; }
+        #results #weather .weather_item .weather_info span span {
           font-size: .7em;
           position: relative;
-          top: 50%;
-          transform: translateY(-75%); }
-
-#meetups {
+          top: 50%; }
+#results #meetups {
   vertical-align: middle;
   text-align: center;
   background-color: #44BBE3; }
-  #meetups #num_members_bar_chart rect {
+  #results #meetups #num_members_bar_chart rect {
     fill: steelblue; }
-  #meetups #num_members_bar_chart text {
+  #results #meetups #num_members_bar_chart text {
     fill: white;
     font: 10px sans-serif;
     text-anchor: end; }
-  #meetups #num_members_bar_chart .axis text {
+  #results #meetups #num_members_bar_chart .axis text {
     font: 10px sans-serif; }
-  #meetups #num_members_bar_chart .axis path,
-  #meetups #num_members_bar_chart .axis line {
+  #results #meetups #num_members_bar_chart .axis path,
+  #results #meetups #num_members_bar_chart .axis line {
     fill: none;
     stroke: #000;
     shape-rendering: crispEdges; }
-  #meetups .meetup_item {
+  #results #meetups .meetup_item {
     background-color: white;
     display: inline-block;
     border: 2px solid;
@@ -61,11 +82,11 @@
     margin: 10px;
     text-decoration: none;
     color: black; }
-    #meetups .meetup_item img {
+    #results #meetups .meetup_item img {
       border-radius: 10px;
       width: 120px;
       height: 120px; }
-    #meetups .meetup_item p {
+    #results #meetups .meetup_item p {
       font-size: 0.8em;
       margin: 1px;
       padding: 0px; }
