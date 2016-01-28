@@ -65,6 +65,7 @@ function meetup_stats(lat,lng,city_name){
     +"&photo-host=public"
     +"&lat="+lat
     +"&lon="+lng
+    +"&radius="+20
     +"&order=most_active"
     +"&page=300"
     +"&only=members,category.shortname"
@@ -84,9 +85,9 @@ function meetup_stats(lat,lng,city_name){
            $("#num_groups_bar_chart").empty();
 
            if(data["data"].length > 0){
-             var d = reorganize_data_to_array(data["data"]);
-             create_num_members_bar_chart(d)
-             create_num_groups_pie_chart(d, data["data"].length, city_name);
+             var d = reorganize_data_and_find_overall_stats(data["data"]);
+             create_num_members_bar_chart(d.data,d.total_num_ppl)
+             create_num_groups_pie_chart(d.data, d.total_num_groups, city_name);
            }else{
              $("#meetups").append("<p>Fetching Meetup.com data failed, please try again later</p>");
            }
@@ -97,7 +98,9 @@ function meetup_stats(lat,lng,city_name){
      });
 }
 
-function reorganize_data_to_array(data){
+function reorganize_data_and_find_overall_stats(data){
+  var total_num_ppl = 0;
+
   var hashed_data = {};
 
   for (var i = 0; i < data.length; i++) {
@@ -118,7 +121,9 @@ function reorganize_data_to_array(data){
                                 "num_groups":1
                               };
     }
+    total_num_ppl += num_members_in_group;
   }
+
 
   var array_data = []
   for (var key in hashed_data) {
@@ -129,14 +134,14 @@ function reorganize_data_to_array(data){
     array_data.push(new_data_pt);
   }
 
-  return array_data;
+  return {"data":array_data,"total_num_ppl":total_num_ppl,"total_num_groups":data.length};
 }
 
 //D3 source: http://d3js.org/
 /*D3 tutorial sources:
     http://bost.ocks.org/mike/bar/2/
  */
-function create_num_members_bar_chart(data){
+function create_num_members_bar_chart(data,total_num_ppl){
   //organize the data to be descending with respect to number of people
   data.sort(function(a,b){
     return a["num_members"] < b["num_members"];
@@ -183,7 +188,7 @@ function create_num_members_bar_chart(data){
     .attr("y", 5 - (margin.top / 2) )
     .attr("text-anchor", "middle")
     .style("font-size", "16px")
-    .text("Number of People in Each Group Category");
+    .text("Number of People in Each Group Category ("+total_num_ppl+" total)");
 
   //append x axis to the chart
   chart.append("g")
@@ -223,6 +228,7 @@ function create_num_members_bar_chart(data){
 }
 
 // Copied and modified from: https://gist.github.com/enjalot/1203641
+//  Labels: http://jsfiddle.net/Qh9X5/1196/
 function create_num_groups_pie_chart(data,total_num_groups,city_name){
   //organize the data to be descending with respect to number of GROUPS
   data.sort(function(a,b){
