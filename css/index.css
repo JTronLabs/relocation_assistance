@@ -40,6 +40,13 @@
     fill: white;
     font: 10px sans-serif;
     text-anchor: end; }
+  #meetups #num_members_bar_chart .axis text {
+    font: 10px sans-serif; }
+  #meetups #num_members_bar_chart .axis path,
+  #meetups #num_members_bar_chart .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges; }
   #meetups .meetup_item {
     background-color: white;
     display: inline-block;

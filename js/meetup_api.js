@@ -82,7 +82,7 @@ function meetup_stats(lat,lng){
          success: function(data, status, xhr) {
            $("#num_members_bar_chart").empty();
            $("#num_groups_bar_chart").empty();
-           
+
            if(data["data"].length > 0){
              var d = reorganize_data_to_array(data["data"]);
              create_num_members_bar_chart(d,data["data"].length)
@@ -131,42 +131,82 @@ function reorganize_data_to_array(data){
   return array_data;
 }
 
-
 //D3 source: http://d3js.org/
 /*D3 tutorial sources:
     http://bost.ocks.org/mike/bar/2/
  */
 function create_num_members_bar_chart(data,total_num_groups){
-  var width = 420,
-      barHeight = 20;
+  //organize the data to be descending
+  data.sort(function(a,b){
+    return a["num_members"] < b["num_members"];
+  });
+
+  var margin = {top: 5, right: 5, bottom: 20, left: 90},
+      width = 500 - margin.left - margin.right,
+      totalHeight = 500 - margin.top - margin.bottom;//height is total number of bars * height of each bar
 
   //creates a function that maps from data space (domain) to display/pixel space (range)
-  var domain_to_display_map = d3.scale.linear()
+  var x = d3.scale.linear()
       .domain([0,
-                d3.max(data, function(d){//accessor method to find the max of "num_members in this data array"
+                d3.max(data, function(d){//accessor method to find the max of "num_members" in this data array
                   return d["num_members"];
                 })
               ]
             )
       .range([0, width]);
 
-  var chart = d3.select("#num_members_bar_chart")//select HTML element
-      .attr("width", width)//set width of HTML element
-      .attr("height", barHeight * data.length);//height is total number of bars
+  var y = d3.scale.ordinal()
+    .domain(data.map(function (d) { return d.name; }))
+    .rangeRoundBands([0, totalHeight]);//scales ordinal data to be equal height proportional to the total height
 
-  var bar = chart.selectAll("g")//prepare to create 'g' (logical svg container element) in this element (none currently there)
+  //bind axis to existing x and y scales and set its position relative to graph
+  var xAxis = d3.svg.axis()
+    .scale(x)
+    .tickFormat(d3.format("s"))//format numbers to use K for 1000, M for 1,000,000, etc
+    .orient("bottom");
+
+  var yAxis = d3.svg.axis()
+      .scale(y)
+      .orient("left");
+
+  var chart = d3.select("#num_members_bar_chart")//select HTML element
+      .attr("width", width + margin.left + margin.right)//set width of outer SVG container's HTML element. Add in the margin so the enrite graphs size remains constant
+      .attr("height", totalHeight + margin.top + margin.bottom)
+  .append("g")//apply margins by offsetting the origin of the chart area by the top-left margin
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+  //append axis to the chart
+  chart.append("g")
+  .attr("class", "x axis")
+  .attr("transform", "translate(0," + totalHeight + ")")
+  .call(xAxis);
+
+  chart.append("g")
+      .attr("class", "y axis")
+      .call(yAxis);
+
+  var bar = chart.selectAll(".bar")//prepare to create 'g' (logical svg container element) in this element with class label "bar" (to allow selectAll to avoid the 2 axis).
       .data(data)//data join
     .enter().append("g")//create a 'g' in the chart for each data element
-      .attr("transform", function(d, i) { return "translate(0," + i * barHeight + ")"; });//translate the g element vertically, creating a local origin for positioning the bar and its associated label.
+      .attr("class", "bar")
+      .attr("transform", function(d, i) { return "translate(0," + i * y.rangeBand() + ")"; });//translate the g element vertically, creating a local origin for positioning the bar and its associated label.
 
   //exactly one rect and one text element per g element, so append directly to the bar/'g' element (rect and text inherit info from parent 'g' element)
   bar.append("rect")//svg element 'rect' created inside each 'g'
-      .attr("width", function(d) { return domain_to_display_map(d.num_members) }) //scale bar from domain to pixel range
-      .attr("height", barHeight - 1);//one less than potential total to create padding between bars
+      .attr("width", function(d) { return x(d.num_members) }) //scale bar from domain to pixel range
+      .attr("height", y.rangeBand());//one less than potential total to create padding between bars
 
   bar.append("text")//text describing the bar chart must be placed explicitly
-      .attr("x", function(d) { return domain_to_display_map(d.num_members) - 3; })//x offset is 3 left of the edge
-      .attr("y", barHeight / 2)//approxiamtely center the text vertically
-      .attr("dy", ".35em")//used to center text vertically (text is .7em)
-      .text(function(d) { return d.name; });//set the 'text' element's wording to the data value
+      .text(function(d) { return d.num_members; })//First, set the 'text' element's wording to the data value
+      .attr("x", function(d) {//set text's x position next to end of its bar
+        var textPos = x(d.num_members) - 3;//text is placed inside of its bar
+        var l = this.getComputedTextLength();
+        if(textPos - l < x(0) + 5 ){//the text will be off the left side of the bar (into the y axis), thus it must be moved
+          textPos =  x(d.num_members) + l + 3;//instead, place text to the right of its bar
+        }
+        return textPos;
+      })
+      .attr("y", y.rangeBand() / 2)//approximately center the text vertically
+      .attr("dy", ".35em");//exactly center text vertically (text is .7em)
+
 }
