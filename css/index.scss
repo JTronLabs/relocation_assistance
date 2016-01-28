@@ -9,6 +9,7 @@ $meetups_icon_width: 120px;
 html,body{
   padding:0;
   margin:0;
+  width:100%
 }
 
 #landing_page{
@@ -19,9 +20,6 @@ html,body{
     right:0;
     left:0;
 
-    text-align: center;
-    margin: 0 auto;
-    display:block;
     width:50%;
     min-width: 250px;
     input[type="text"]{
