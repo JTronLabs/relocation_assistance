@@ -1,7 +1,7 @@
 //compile to CSS with: sass --watch index.scss:index.css
 
-$weather_info_height:    40px;
-$weather_item_width:    100px;
+$weather_item_width:    80px;
+$weather_info_icon_height:    $weather_item_width * .26;
 $weather_icon_width: $weather_item_width * .8;
 
 $meetups_icon_width: 120px;
@@ -26,9 +26,10 @@ $meetups_icon_width: 120px;
     width:$weather_item_width * 1.7;
     margin: 10px;
     .date{
-      font-size: 1.1em;
+      font-size: .9em;
     }
     .weather_icon{
+      padding:4px;
       img{
         height:$weather_icon_width;
         width:$weather_icon_width;
@@ -39,10 +40,11 @@ $meetups_icon_width: 120px;
       span{
         display: inline-block;
         img{
-          height:$weather_info_height;
-          width:$weather_info_height;
+          height:$weather_info_icon_height;
+          width:$weather_info_icon_height;
         }
         span{
+          font-size: .7em;
           position: relative;
           top: 50%;
           transform: translateY(-75%);

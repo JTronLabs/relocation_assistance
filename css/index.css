@@ -1,6 +1,6 @@
 #weather {
   text-align: center;
-  min-height: 100px;
+  min-height: 80px;
   background-color: #4c4222; }
   #weather .weather_item {
     background-color: #D69723;
@@ -11,21 +11,24 @@
     margin: 2px;
     text-align: center;
     display: inline-block;
-    width: 170px;
+    width: 136px;
     margin: 10px; }
     #weather .weather_item .date {
-      font-size: 1.1em; }
-    #weather .weather_item .weather_icon img {
-      height: 80px;
-      width: 80px; }
+      font-size: .9em; }
+    #weather .weather_item .weather_icon {
+      padding: 4px; }
+      #weather .weather_item .weather_icon img {
+        height: 64px;
+        width: 64px; }
     #weather .weather_item .weather_info {
       display: block; }
       #weather .weather_item .weather_info span {
         display: inline-block; }
         #weather .weather_item .weather_info span img {
-          height: 40px;
-          width: 40px; }
+          height: 20.8px;
+          width: 20.8px; }
         #weather .weather_item .weather_info span span {
+          font-size: .7em;
           position: relative;
           top: 50%;
           transform: translateY(-75%); }

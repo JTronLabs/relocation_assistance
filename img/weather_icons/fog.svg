@@ -1,13 +1,50 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M69.998,65.641H30.003c-1.104,0-2-0.896-2-2c0-1.105,0.896-2,2-2h39.995
-	c1.104,0,2,0.895,2,2C71.998,64.744,71.103,65.641,69.998,65.641z M69.998,57.641H30.003c-1.104,0-2-0.895-2-2c0-1.104,0.896-2,2-2
-	h39.995c1.104,0,2,0.896,2,2C71.998,56.746,71.103,57.641,69.998,57.641z M59.999,45.643c-1.601,0-3.083,0.48-4.333,1.291
-	c-1.232-5.317-5.974-9.291-11.665-9.291c-6.626,0-11.998,5.373-11.998,12h-4c0-8.835,7.163-15.999,15.998-15.999
-	c6.004,0,11.229,3.312,13.965,8.204c0.664-0.113,1.337-0.205,2.033-0.205c5.222,0,9.652,3.342,11.301,8h-4.381
-	C65.535,47.253,62.958,45.643,59.999,45.643z M30.003,69.639h39.995c1.104,0,2,0.896,2,2c0,1.105-0.896,2-2,2H30.003
-	c-1.104,0-2-0.895-2-2C28.003,70.535,28.898,69.639,30.003,69.639z"/>
-</svg>
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="Layer_1"
+   x="0px"
+   y="0px"
+   width="100px"
+   height="100px"
+   viewBox="0 0 100 100"
+   enable-background="new 0 0 100 100"
+   xml:space="preserve"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="fog.svg"><metadata
+     id="metadata3041"><rdf:RDF><cc:Work
+         rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><defs
+     id="defs3039" /><sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1045"
+     inkscape:window-height="480"
+     id="namedview3037"
+     showgrid="false"
+     inkscape:zoom="2.36"
+     inkscape:cx="50"
+     inkscape:cy="50"
+     inkscape:window-x="211"
+     inkscape:window-y="288"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="Layer_1" /><path
+     clip-rule="evenodd"
+     d="M 95.454029,76.320661 H 4.5459711 C 2.0365951,76.320661 0,74.284066 0,71.77469 0,69.263041 2.0365951,67.228719 4.5459711,67.228719 H 95.454029 c 2.509376,0 4.545971,2.034322 4.545971,4.545971 0,2.507103 -2.034322,4.545971 -4.545971,4.545971 z m 0,-18.183884 H 4.5459711 C 2.0365951,58.136777 0,56.102455 0,53.590806 0,51.08143 2.0365951,49.044835 4.5459711,49.044835 H 95.454029 c 2.509376,0 4.545971,2.036595 4.545971,4.545971 0,2.511649 -2.034322,4.545971 -4.545971,4.545971 z M 72.726446,30.865496 c -3.63905,0 -7.007614,1.091033 -9.848846,2.934424 C 60.077282,21.714456 49.298784,12.681612 36.363223,12.681612 c -15.060802,0 -27.2712807,12.212751 -27.2712807,27.275826 H 0 C 0,19.875611 16.281396,3.5919423 36.363223,3.5919423 c 13.647005,0 25.523355,7.5281277 31.742244,18.6475737 1.509262,-0.256848 3.038981,-0.465962 4.620979,-0.465962 11.869531,0 21.938857,7.596318 25.68701,18.183884 h -9.95795 C 85.309694,34.525003 79.45221,30.865496 72.726446,30.865496 z M 4.5459711,85.408058 H 95.454029 C 97.963405,85.408058 100,87.444653 100,89.954029 100,92.465678 97.963405,94.5 95.454029,94.5 H 4.5459711 C 2.0365951,94.5 0,92.465678 0,89.954029 0,87.444653 2.0343221,85.408058 4.5459711,85.408058 z"
+     id="path3035"
+     inkscape:connector-curvature="0"
+     style="fill-rule:evenodd" /></svg>
