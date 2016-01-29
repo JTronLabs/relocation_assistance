@@ -20,11 +20,9 @@ function initAutocomplete() {
 
 
 function respondToPlaceSelection() {
-  $('#show_results_btn').prop('disabled', false);
-  var place = autocomplete.getPlace();
-  //console.log( place );
-  forecast_api_call(place.geometry.location.lat(), place.geometry.location.lng());
-  //meetup_groups_nearby(place.geometry.location.lat(), place.geometry.location.lng());
-  meetup_stats(place.geometry.location.lat(), place.geometry.location.lng(),place["address_components"][0]["long_name"]);
-  //trulia_api_call(place["address_components"][0]["long_name"], place["address_components"][2]["short_name"]);//city,state
+  if(user_is_on_landing_page()){
+    $('#show_results_btn').prop('disabled', false);
+    
+    run_all_api_updates();
+  }
 }

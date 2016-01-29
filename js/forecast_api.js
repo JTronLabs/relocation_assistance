@@ -23,9 +23,10 @@ function forecast_api_call(lat,lng){
              //console.log(data);
              //console.log(status);
              update_html_with_forecast_results(data);
+             add_forecast_api_credit();
            },
            error: function(jqXHR, textStatus, errorThrown) {
-             chupdate_html_with_forecast_results();
+             update_html_with_forecast_results();
            }
        });
 }
@@ -106,4 +107,15 @@ function get_weather_html(current_element,index,array){
       +"</div>";
 
       $("#weather").append(html);
+}
+
+
+function add_forecast_api_credit(){
+  $('weather').append(
+    "<a href=\"http://forecast.io\" class=\"api_credit\">"
+    +"  <img src=\"img/forecast.io.ico\" height=\"16\" width=\"16\">"
+    +"  More at Forecast.io"
+    +"</a>"
+  );
+    console.log("credited!")
 }

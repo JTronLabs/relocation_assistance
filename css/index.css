@@ -22,6 +22,10 @@ body {
     text-align: center;
     margin: 3px; }
 
+#results .api_credit {
+  position: absolute;
+  bottom: 0;
+  right: 0; }
 #results .navbar {
   margin-bottom: 0; }
 #results #new_form_location form {
