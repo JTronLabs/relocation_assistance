@@ -11,8 +11,19 @@ html,body{
   margin:0;
   width:100%
 }
+body{
+  background-color: #73D8FA;
+}
 
 #landing_page{
+  #main_img{
+    display: block;
+    margin: 0 auto;
+
+    height:auto;
+    min-width:460px;
+    width:460px;
+  }
   form{
     //vertically align
     position:absolute;
@@ -20,10 +31,12 @@ html,body{
     right:0;
     left:0;
 
+    text-align: center;
     width:50%;
     min-width: 250px;
-    input[type="text"]{
+    input{
       text-align: center;
+      margin:3px;
     }
   }
 }

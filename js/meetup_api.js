@@ -85,11 +85,19 @@ function meetup_stats(lat,lng,city_name){
            $("#num_groups_bar_chart").empty();
 
            if(data["data"].length > 0){
-             var d = reorganize_data_and_find_overall_stats(data["data"]);
-             create_num_members_bar_chart(d.data,d.total_num_ppl)
-             create_num_groups_pie_chart(d.data, d.total_num_groups, city_name);
+             var stats = reorganize_data_and_find_overall_stats(data["data"]);
+             create_bar_chart(stats.organized_data,
+                            "Number of People in Each Group Category ("+stats.total_num_ppl+" total)",
+                            "#num_members_bar_chart",
+                            function(x){return x.name;},
+                            function(x){return x.num_members;});
+             create_pie_chart(stats.organized_data,
+                            "Group Composition in "+city_name+" ("+stats.total_num_groups+" Groups)",
+                            "#num_groups_bar_chart",
+                            function(x){return x.name;},
+                            function(x){return x.num_groups;});
            }else{
-             $("#meetups").append("<p>Fetching Meetup.com data failed, please try again later</p>");
+             $("#num_members_bar_chart").append("<p>Fetching Meetup.com data failed, please try again later</p>");
            }
          },
          error: function(jqXHR, textStatus, errorThrown) {

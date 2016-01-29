@@ -35,17 +35,17 @@ function reorganize_data_and_find_overall_stats(data){
     array_data.push(new_data_pt);
   }
 
-  return {"data":array_data,"total_num_ppl":total_num_ppl,"total_num_groups":data.length};
+  return {"organized_data":array_data,"total_num_ppl":total_num_ppl,"total_num_groups":data.length};
 }
 
 //D3 source: http://d3js.org/
 /*D3 tutorial sources:
     http://bost.ocks.org/mike/bar/2/
  */
-function create_num_members_bar_chart(data,total_num_ppl){
-  //organize the data to be descending with respect to number of people
+function create_bar_chart(data,title_string,html_id_name,label_accessor_method,value_accessor_method){
+  //organize the data to be descending with respect to it accessed value
   data.sort(function(a,b){
-    return a["num_members"] < b["num_members"];
+    return value_accessor_method(b) - value_accessor_method(a);
   });
 
   var margin = {top: 30, right: 5, bottom: 20, left: 80},//this acts as svg padding, and allows space for the x,y axis to be placed on the graph
@@ -56,16 +56,11 @@ function create_num_members_bar_chart(data,total_num_ppl){
 
   //creates a function that maps from data space (domain) to display/pixel space (range)
   var x = d3.scale.linear()
-      .domain([0,
-                d3.max(data, function(d){//accessor method to find the max of "num_members" in this data array
-                  return d["num_members"];
-                })
-              ]
-            )
+      .domain([0, d3.max(data, value_accessor_method )])
       .range([0, width]);
 
   var y = d3.scale.ordinal()
-    .domain(data.map(function (d) { return d.name; }))
+    .domain(data.map(label_accessor_method))
     .rangeRoundBands([0, height]);//scales ordinal data to be equal height proportional to the total height
 
   //bind axis to existing x and y scales and set its position relative to graph
@@ -77,7 +72,7 @@ function create_num_members_bar_chart(data,total_num_ppl){
       .scale(y)
       .orient("left");
 
-  var chart = d3.select("#num_members_bar_chart")//select HTML element
+  var chart = d3.select(html_id_name)//select HTML element
       .attr("width", totalWid)//set width of outer SVG container's HTML element. Add in the margin so the enrite graphs size remains constant
       .attr("height", totalHeight)
   .append("g")//apply margins by offsetting the origin of the chart area by the top-left margin
@@ -89,7 +84,7 @@ function create_num_members_bar_chart(data,total_num_ppl){
     .attr("y", 5 - (margin.top / 2) )
     .attr("text-anchor", "middle")
     .style("font-size", "16px")
-    .text("Number of People in Each Group Category ("+total_num_ppl+" total)");
+    .text(title_string);
 
   //append x axis to the chart
   chart.append("g")
@@ -110,16 +105,16 @@ function create_num_members_bar_chart(data,total_num_ppl){
 
   //exactly one rect and one text element per g element, so append directly to the bar/'g' element (rect and text inherit info from parent 'g' element)
   bar.append("rect")//svg element 'rect' created inside each 'g'
-      .attr("width", function(d) { return x(d.num_members) }) //scale bar from domain to pixel range
+      .attr("width", function(d) { return x(value_accessor_method(d)) }) //scale bar from domain to pixel range
       .attr("height", y.rangeBand());//one less than potential total to create padding between bars
 
   bar.append("text")//text describing the bar chart must be placed explicitly
-      .text(function(d) { return d.num_members; })//First, set the 'text' element's wording to the data value
+      .text(function(d) { return value_accessor_method(d); })//First, set the 'text' element's wording to the data value
       .attr("x", function(d) {//set text's x position next to end of its bar
-        var textPos = x(d.num_members) - 3;//text is placed inside of its bar
+        var textPos = x(value_accessor_method(d)) - 3;//text is placed inside of its bar
         var l = this.getComputedTextLength();
         if(textPos - l < x(0) + 5 ){//the text will be off the left side of the bar (into the y axis), thus it must be moved
-          textPos =  x(d.num_members) + l + 3;//instead, place text to the right of its bar
+          textPos =  x(value_accessor_method(d)) + l + 3;//instead, place text to the right of its bar
         }
         return textPos;
       })
@@ -130,10 +125,10 @@ function create_num_members_bar_chart(data,total_num_ppl){
 
 // Copied and modified from: https://gist.github.com/enjalot/1203641
 //  Labels: http://jsfiddle.net/Qh9X5/1196/
-function create_num_groups_pie_chart(data,total_num_groups,city_name){
-  //organize the data to be descending with respect to number of GROUPS
+function create_pie_chart(data,title_string,html_id_name,label_accessor_method,value_accessor_method){
+  //organize the data to be descending with respect to it accessed value
   data.sort(function(a,b){
-    return a["num_groups"] < b["num_groups"];
+    return value_accessor_method(a) - value_accessor_method(b) ;
   });
 
     var color = d3.scale.category20c();     //builtin range of colors
@@ -147,7 +142,7 @@ function create_num_groups_pie_chart(data,total_num_groups,city_name){
         r = width / 2,//radius for pie chart sizing
         arc = d3.svg.arc().innerRadius(r * .4).outerRadius(r);             //this will create <path> elements for us using arc data
 
-    var chart = d3.select("#num_groups_bar_chart");
+    var chart = d3.select(html_id_name);
 
     //add a title to the chart at the top middle
     chart.append("text")
@@ -155,7 +150,7 @@ function create_num_groups_pie_chart(data,total_num_groups,city_name){
       .attr("y", margin.top / 2 )
       .attr("text-anchor", "middle")
       .style("font-size", "16px")
-      .text("Group Composition in "+city_name+" ("+total_num_groups+" Groups)");
+      .text(title_string);
 
     var vis = chart
         .data([data])
@@ -185,6 +180,6 @@ function create_num_groups_pie_chart(data,total_num_groups,city_name){
                 return "translate(" + arc.centroid(d) + ")";        //this gives us a pair of coordinates like [50, 50]
             })
             .attr("text-anchor", "middle")                          //center the text on it's origin
-            .text(function(d, i) { return data[i].name; });        //get the label from our original data array
+            .text(function(d, i) { return label_accessor_method(data[i]); });        //get the label from our original data array
 
 }

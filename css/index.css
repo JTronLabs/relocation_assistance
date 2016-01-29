@@ -3,15 +3,26 @@ html, body {
   margin: 0;
   width: 100%; }
 
+body {
+  background-color: #73D8FA; }
+
+#landing_page #main_img {
+  display: block;
+  margin: 0 auto;
+  height: auto;
+  min-width: 460px;
+  width: 460px; }
 #landing_page form {
   position: absolute;
   top: 50%;
   right: 0;
   left: 0;
+  text-align: center;
   width: 50%;
   min-width: 250px; }
-  #landing_page form input[type="text"] {
-    text-align: center; }
+  #landing_page form input {
+    text-align: center;
+    margin: 3px; }
 
 #results .navbar {
   margin-bottom: 0; }

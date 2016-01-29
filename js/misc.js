@@ -6,6 +6,7 @@ $( document ).ready(function() {
 
   $(document).on('click', "#show_results_btn",function () {
     $('#results').show();
+    $('#landing_page').hide();
 
     //move input from its original location (center of window) to the navbar
     var f = $('#form_inputs').detach();
