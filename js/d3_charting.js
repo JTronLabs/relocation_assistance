@@ -73,8 +73,8 @@ function create_bar_chart(data,title_string,html_id_name,label_accessor_method,v
       .orient("left");
 
   var chart = d3.select(html_id_name)//select HTML element
-      .attr("width", totalWid)//set width of outer SVG container's HTML element. Add in the margin so the enrite graphs size remains constant
-      .attr("height", totalHeight)
+      .attr("viewBox", "0 0 "+totalWid+" "+totalHeight) //set the height and width to be responsive via the viewbox attribute
+      .attr("preserveAspectRatio", "xMinYMin meet")
   .append("g")//apply margins by offsetting the origin of the chart area by the top-left margin
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");//apply margins by offsetting the origin of the chart area by the top-left margin
 
@@ -142,7 +142,9 @@ function create_pie_chart(data,title_string,html_id_name,label_accessor_method,v
         r = width / 2,//radius for pie chart sizing
         arc = d3.svg.arc().innerRadius(r * .4).outerRadius(r);             //this will create <path> elements for us using arc data
 
-    var chart = d3.select(html_id_name);
+    var chart = d3.select(html_id_name)
+      .attr("viewBox", "0 0 "+totalWid+" "+totalHeight) //set the height and width to be responsive via the viewbox attribute
+      .attr("preserveAspectRatio", "xMinYMin meet");
 
     //add a title to the chart at the top middle
     chart.append("text")
@@ -154,8 +156,6 @@ function create_pie_chart(data,title_string,html_id_name,label_accessor_method,v
 
     var vis = chart
         .data([data])
-            .attr("width", totalWid)           //set the width and height of our visualization (these will be attributes of the <svg> tag
-            .attr("height", totalHeight)
       .append("g")                    //make a group to hold our pie chart, and move it relative to the entire svg
         .attr("transform", "translate(" + (r+margin.left) + "," + (r+margin.top) + ")")    //move the center of the pie chart from 0, 0 to radius, radius (and apply margins!)
 

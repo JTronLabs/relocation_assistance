@@ -6,6 +6,9 @@ html, body {
 body {
   background-color: #73D8FA; }
 
+svg {
+  max-width: 700px; }
+
 #landing_page #main_img {
   display: block;
   margin: 50px auto;
