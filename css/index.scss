@@ -1,8 +1,11 @@
 //compile to CSS with: sass --watch index.scss:index.css
 
+$section_padding: 30px;
+$api_credit_img_len:20px;
+
 $weather_item_width:    100px;
 $weather_info_icon_height:    $weather_item_width * .2;
-$weather_icon_width: $weather_item_width * .8;
+$weather_icon_width: $weather_item_width * .7;
 
 $meetups_icon_width: 120px;
 
@@ -41,8 +44,12 @@ body{
 #results{
   .api_credit{
     position: absolute;
-    bottom:0;
-    right:0;
+    bottom:5px;
+    right:5px;
+    img{
+      height:$api_credit_img_len;
+      width:$api_credit_img_len;
+    }
   }
   .navbar{
     margin-bottom: 0;
@@ -57,6 +64,11 @@ body{
   }
 
   #weather{
+    .api_credit{
+      color:white;
+    }
+    padding:$section_padding;
+    position:relative;
     text-align: center;
     min-height: $weather_item_width;
     background-color: #4c4222;
@@ -105,6 +117,11 @@ body{
   }
 
   #meetups{
+    .api_credit{
+      color:black;
+    }
+    padding:$section_padding;
+    position:relative;
     vertical-align: middle;
     text-align: center;
     background-color: #44BBE3;

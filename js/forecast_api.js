@@ -109,13 +109,11 @@ function get_weather_html(current_element,index,array){
       $("#weather").append(html);
 }
 
-
 function add_forecast_api_credit(){
-  $('weather').append(
+  $('#weather').append(
     "<a href=\"http://forecast.io\" class=\"api_credit\">"
-    +"  <img src=\"img/forecast.io.ico\" height=\"16\" width=\"16\">"
+    +"  <img src=\"img/forecast.io.ico\">"
     +"  More at Forecast.io"
     +"</a>"
   );
-    console.log("credited!")
 }

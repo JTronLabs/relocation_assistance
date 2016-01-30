@@ -24,8 +24,11 @@ body {
 
 #results .api_credit {
   position: absolute;
-  bottom: 0;
-  right: 0; }
+  bottom: 5px;
+  right: 5px; }
+  #results .api_credit img {
+    height: 20px;
+    width: 20px; }
 #results .navbar {
   margin-bottom: 0; }
 #results #new_form_location form {
@@ -33,9 +36,13 @@ body {
   #results #new_form_location form input {
     display: inline-block; }
 #results #weather {
+  padding: 30px;
+  position: relative;
   text-align: center;
   min-height: 100px;
   background-color: #4c4222; }
+  #results #weather .api_credit {
+    color: white; }
   #results #weather .weather_item {
     background-color: #D69723;
     border: 2px solid;
@@ -52,8 +59,8 @@ body {
     #results #weather .weather_item .weather_icon {
       padding: 4px; }
       #results #weather .weather_item .weather_icon img {
-        height: 80px;
-        width: 80px; }
+        height: 70px;
+        width: 70px; }
     #results #weather .weather_item .weather_info {
       display: block; }
       #results #weather .weather_item .weather_info span {
@@ -66,9 +73,13 @@ body {
           position: relative;
           top: 50%; }
 #results #meetups {
+  padding: 30px;
+  position: relative;
   vertical-align: middle;
   text-align: center;
   background-color: #44BBE3; }
+  #results #meetups .api_credit {
+    color: black; }
   #results #meetups #num_members_bar_chart rect {
     fill: steelblue; }
   #results #meetups #num_members_bar_chart text {

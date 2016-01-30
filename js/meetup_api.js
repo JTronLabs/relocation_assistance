@@ -81,8 +81,11 @@ function meetup_stats(lat,lng,city_name){
          dataType : 'jsonp',   //you may use jsonp for cross origin request
          crossDomain:true,
          success: function(data, status, xhr) {
-           $("#num_members_bar_chart").empty();
-           $("#num_groups_bar_chart").empty();
+           $("#meetups").empty();
+           $("#meetups").append(
+            "<svg id=\"num_groups_bar_chart\"></svg>"
+             +"<svg id=\"num_members_bar_chart\"></svg>");
+           add_meetup_api_credit();
 
            if(data["data"].length > 0){
              var stats = reorganize_data_and_find_overall_stats(data["data"]);
@@ -104,4 +107,15 @@ function meetup_stats(lat,lng,city_name){
 
          }
      });
+}
+
+
+
+function add_meetup_api_credit(){
+  $('#meetups').append(
+    "<a href=\"http://www.meetup.com/\" class=\"api_credit\">"
+    +"  <img src=\"img/meetup_logo.svg\">"
+    +"  More at Meetups.com"
+    +"</a>"
+  );
 }
